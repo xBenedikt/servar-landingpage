@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVÅR Mörk – Dark-Aluminium Home-Server für Pros</title>
+    <meta name="description" content="SERVÅR Mörk – die Pro-Edition: geräucherte Eiche, mattschwarzes Aluminium, 10-GbE-Speed und Stealth-LED. Für Gamer, Creator und IT-Enthusiasten.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body class="theme-mork">
+
+<!-- ========================================================
+     SITE HEADER (sticky)
+     ======================================================== -->
+<header class="site-header" id="top">
+    <div class="container site-header__inner">
+        <a href="#top" class="brand" aria-label="SERVÅR Startseite">SERVÅR</a>
+
+        <nav class="site-nav" id="primary-nav" aria-label="Hauptnavigation">
+            <a href="#hero"     class="site-nav__link">Produkt</a>
+            <a href="#warum"    class="site-nav__link">Warum SERVÅR</a>
+            <a href="#specs"    class="site-nav__link">Technik</a>
+            <a href="#reviews"  class="site-nav__link">Stimmen</a>
+            <a href="#insta"    class="site-nav__link">Inspiration</a>
+            <a href="#" class="site-nav__link site-nav__login">Hej! Hier einloggen</a>
+        </nav>
+
+        <div class="site-header__actions">
+            <button class="btn btn--ghost site-header__login" aria-label="Hej! Hier einloggen">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg>
+                <span class="btn__label">Hej! Hier einloggen</span>
+            </button>
+            <button class="btn-icon btn-icon--wishlist" aria-label="Favoriten" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>
+                </svg>
+            </button>
+            <button class="btn-icon" aria-label="Warenkorb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="primary-nav">
+                <svg class="nav-toggle__icon nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg class="nav-toggle__icon nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- ====================================================
+         HERO — Eyecatcher: Blueprint + Iso-Server
+         ==================================================== -->
+    <section class="hero" id="hero">
+        <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="auto"
+               poster="assets/hero/servar-hero-poster.webp" aria-hidden="true">
+            <source src="assets/hero/servar-hero.webm" type="video/webm">
+            <source src="assets/hero/servar-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero__scrim" aria-hidden="true"></div>
+
+        <div class="container hero__inner">
+
+            <!-- Text -->
+            <div class="hero__content">
+                <span class="hero__kicker reveal">
+                    <span class="hero__kicker-dot"></span>Pro-Edition · Dark Aluminium
+                </span>
+
+                <h1 class="hero__title reveal" style="--reveal-delay:.06s">SERV<span class="hero__title-a">Å</span>R</h1>
+
+                <p class="hero__sub reveal" style="--reveal-delay:.12s">
+                    Maximale Leistung.<br>Edles <strong>Dark Design.</strong>
+                </p>
+
+                <p class="hero__lede reveal" style="--reveal-delay:.18s">
+                    Geräucherte Eiche, mattschwarzes Aluminium und 10-GbE-Speed –
+                    lüfterlos, flüsterleise, kompromisslos.
+                </p>
+
+                <div class="hero__ctas reveal" style="--reveal-delay:.24s">
+                    <a href="#warum" class="btn btn--yellow btn--lg">Pro entdecken</a>
+                    <a href="#assembly" class="btn btn--outline">So funktioniert's</a>
+                </div>
+
+                <div class="hero__meta reveal" style="--reveal-delay:.32s">
+                    <span>Art.-Nr. 503.847.63</span>
+                    <span class="hero__sep"></span>
+                    <span class="hero__meta-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6.6 6.6a2 2 0 0 0 2.8 2.8l6.6-6.6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.1-.4-.4-2.1z"/></svg>
+                        Stealth-LED inklusive
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero__scroll-hint" aria-hidden="true">
+            scroll
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         MARQUEE TICKER
+         ==================================================== -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+            <span class="marquee__item">10 Gbit/s</span>
+            <span class="marquee__item">Geräucherte Eiche</span>
+            <span class="marquee__item">Mattes Aluminium</span>
+            <span class="marquee__item">RGB-Statusring</span>
+            <span class="marquee__item">Lüfterlos</span>
+            <span class="marquee__item">Stealth-Modus</span>
+            <span class="marquee__item">10 Gbit/s</span>
+            <span class="marquee__item">Geräucherte Eiche</span>
+            <span class="marquee__item">Mattes Aluminium</span>
+            <span class="marquee__item">RGB-Statusring</span>
+            <span class="marquee__item">Lüfterlos</span>
+            <span class="marquee__item">Stealth-Modus</span>
+        </div>
+    </div>
+
+
+    <!-- ====================================================
+         WARUM SERVÅR — Benefits-Strip
+         ==================================================== -->
+    <section class="trust" id="warum">
+        <div class="container">
+            <div class="trust__head reveal">
+                <span class="trust__eyebrow">Warum Mörk?</span>
+                <h2 class="trust__title">Performance trifft Design.</h2>
+            </div>
+
+            <div class="trust__grid">
+                <div class="trust__item reveal" style="--reveal-delay:0s;">
+                    <span class="trust__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    </span>
+                    <span class="trust__item-title">Roh-Performance</span>
+                    <span class="trust__text">Acht Kerne, 16 GB RAM und NVMe-Speed – Streaming, Schnitt und VMs laufen parallel.</span>
+                </div>
+
+                <div class="trust__item reveal" style="--reveal-delay:.1s;">
+                    <span class="trust__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <span class="trust__item-title">Edles Material</span>
+                    <span class="trust__text">Geräucherte Eiche und eloxiertes Aluminium in Anthrazit – ein Objekt, das auf dem Schreibtisch bleiben darf.</span>
+                </div>
+
+                <div class="trust__item reveal" style="--reveal-delay:.2s;">
+                    <span class="trust__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </span>
+                    <span class="trust__item-title">Stealth-Modus</span>
+                    <span class="trust__text">Der Statusring leuchtet kühl-blau – oder verschwindet auf Knopfdruck komplett im Dunkeln.</span>
+                </div>
+
+                <div class="trust__item reveal" style="--reveal-delay:.3s;">
+                    <span class="trust__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6.6 6.6a2 2 0 0 0 2.8 2.8l6.6-6.6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.1-.4-.4-2.1z"/></svg>
+                    </span>
+                    <span class="trust__item-title">Lüfterlos leise</span>
+                    <span class="trust__text">Passiv gekühlt, unter 20 dB. Du hörst dein Game, nicht deinen Server.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         ASSEMBLY — gepinnte Scroll-Montage (IKEA-Anleitung)
+         Platzhalter-SVG; später durch <canvas>-Bildsequenz ersetzbar.
+         ==================================================== -->
+    <section class="assembly" id="assembly">
+        <div class="assembly__sticky">
+            <div class="container assembly__grid">
+
+                <!-- Bühne: Fortschritts-Schiene + Server -->
+                <div class="assembly__stage">
+                    <div class="assembly__rail" aria-hidden="true">
+                        <div class="assembly__rail-fill" id="assembly-rail"></div>
+                    </div>
+
+                    <div class="assembly__scene">
+                        <canvas class="assembly__canvas" id="assembly-canvas" width="900" height="1600"
+                                role="img" aria-label="SERVÅR baut sich Schritt für Schritt zusammen"></canvas>
+                    </div>
+                </div>
+
+                <!-- Schritt-Liste -->
+                <div class="assembly__steps">
+                    <p class="assembly__eyebrow">Aufbauanleitung</p>
+                    <h2 class="assembly__title">Vom Karton zum<br>Power-Server.</h2>
+                    <ol class="assembly__steplist">
+                        <li class="assembly__step is-active" data-step="0">
+                            <span class="assembly__step-num">01</span>
+                            <div>
+                                <span class="assembly__step-title">Auspacken &amp; sortieren</span>
+                                <span class="assembly__step-text">Alle Teile liegen flach verpackt bereit – inklusive Inbusschlüssel.</span>
+                            </div>
+                        </li>
+                        <li class="assembly__step" data-step="1">
+                            <span class="assembly__step-num">02</span>
+                            <div>
+                                <span class="assembly__step-title">Module stapeln</span>
+                                <span class="assembly__step-text">Speicher-Module der Reihe nach aufeinanderstecken. Klick – sitzt.</span>
+                            </div>
+                        </li>
+                        <li class="assembly__step" data-step="2">
+                            <span class="assembly__step-num">03</span>
+                            <div>
+                                <span class="assembly__step-title">Deckel &amp; Kabel</span>
+                                <span class="assembly__step-text">Holzdeckel auflegen, Strom und Netzwerk anschließen.</span>
+                            </div>
+                        </li>
+                        <li class="assembly__step" data-step="3">
+                            <span class="assembly__step-num">04</span>
+                            <div>
+                                <span class="assembly__step-title">Einschalten – fertig</span>
+                                <span class="assembly__step-text">Power-Knopf drücken, die LED leuchtet grün. Dein Server läuft.</span>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         FEATURE ROWS — Es gibt eine einfachere Art.
+         ==================================================== -->
+    <section class="feature" id="features">
+        <div class="container">
+
+            <div class="feature__row">
+                <div class="feature__media reveal reveal--left">
+                    <img class="feature__media-img" src="assets/img/feature-privatsphaere.webp" alt="SERVÅR Home-Server aufgeräumt im Zuhause" loading="lazy" decoding="async">
+                </div>
+                <div class="reveal reveal--right">
+                    <p class="feature__eyebrow">Performance</p>
+                    <h2 class="feature__title">Gebaut für echte Last.</h2>
+                    <p class="feature__text">Octa-Core, 16 GB RAM und NVMe-SSD. Genug Reserven für 4K-Schnitt, Game-Streaming und virtuelle Maschinen – gleichzeitig.</p>
+                    <ul class="feature__list">
+                        <li>Ende-zu-Ende verschlüsselt</li>
+                        <li>Kein Tracking, keine Werbung</li>
+                        <li>Du entscheidest, wer Zugriff hat</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature__row feature__row--reverse">
+                <div class="feature__media reveal reveal--right">
+                    <img class="feature__media-img" src="assets/img/feature-aufbau.webp" alt="SERVÅR Flat-Pack – Module und Inbusschlüssel zum Aufbau" loading="lazy" decoding="async">
+                </div>
+                <div class="reveal reveal--left">
+                    <p class="feature__eyebrow">Design</p>
+                    <h2 class="feature__title">Dark Aluminium &amp; Eiche.</h2>
+                    <p class="feature__text">Mattschwarz eloxiertes Aluminium, Deckel aus geräucherter Eiche. Ein Stück, das neben Mac und Monitor bestehen will.</p>
+                    <ul class="feature__list">
+                        <li>Inbusschlüssel liegt bei</li>
+                        <li>Bebilderte Schritt-für-Schritt-Anleitung</li>
+                        <li>Schnell startklar – ohne IT-Wissen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature__row">
+                <div class="feature__media reveal reveal--left">
+                    <img class="feature__media-img" src="assets/img/feature-kosten.webp" alt="SERVÅR mit Erweiterungs-Modul" loading="lazy" decoding="async">
+                </div>
+                <div class="reveal reveal--right">
+                    <p class="feature__eyebrow">Kontrolle</p>
+                    <h2 class="feature__title">Dein Dashboard. Dark Mode.</h2>
+                    <p class="feature__text">Upload-Raten, Speicherbalken, Netzwerkauslastung – live im dunklen Dashboard. Volle Kontrolle, null Cloud.</p>
+                    <ul class="feature__list">
+                        <li>Transparenter Festpreis</li>
+                        <li>Kostenlose Updates inklusive</li>
+                        <li>Erweiterbar mit Zusatz-Modulen</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         TECHNISCHE DATEN — Datenblatt
+         ==================================================== -->
+    <section class="specs" id="specs">
+        <div class="container">
+            <div class="specs__head reveal">
+                <span class="specs__eyebrow">Technische Daten</span>
+                <h2 class="specs__title">Das steckt im Dark-Gehäuse.</h2>
+                <p class="specs__lede">Kompromisslose Hardware in eloxiertem Aluminium – flüsterleise und endlos erweiterbar.</p>
+            </div>
+
+            <div class="specs__stats reveal" style="--reveal-delay:.05s">
+                <div class="specs__stat">
+                    <span class="specs__stat-value"><span data-countup="8">0</span>&nbsp;TB</span>
+                    <span class="specs__stat-label">Speicher · erweiterbar</span>
+                </div>
+                <div class="specs__stat">
+                    <span class="specs__stat-value"><span data-countup="7">0</span>&nbsp;W</span>
+                    <span class="specs__stat-label">Verbrauch im Betrieb</span>
+                </div>
+                <div class="specs__stat">
+                    <span class="specs__stat-value">&lt;&nbsp;<span data-countup="20">0</span>&nbsp;dB</span>
+                    <span class="specs__stat-label">Flüsterleise · lüfterlos</span>
+                </div>
+                <div class="specs__stat">
+                    <span class="specs__stat-value"><span data-countup="10">0</span>&nbsp;Jahre</span>
+                    <span class="specs__stat-label">Garantie</span>
+                </div>
+            </div>
+
+            <div class="specs__groups">
+                <details class="specs__group reveal" open>
+                    <summary class="specs__group-title">Hardware<svg class="specs__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                    <dl class="specs__list">
+                        <div class="specs__row"><dt>Prozessor</dt><dd>Octa-Core ARM</dd></div>
+                        <div class="specs__row"><dt>Arbeitsspeicher</dt><dd>16 GB LPDDR5</dd></div>
+                        <div class="specs__row"><dt>Speicher</dt><dd>8 TB NVMe</dd></div>
+                        <div class="specs__row"><dt>Erweiterbar bis</dt><dd>38 TB</dd></div>
+                    </dl>
+                </details>
+
+                <details class="specs__group reveal" open style="--reveal-delay:.05s">
+                    <summary class="specs__group-title">Anschlüsse<svg class="specs__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                    <dl class="specs__list">
+                        <div class="specs__row"><dt>Netzwerk</dt><dd>10 Gbit/s LAN</dd></div>
+                        <div class="specs__row"><dt>USB</dt><dd>2× USB-C, 1× USB-A</dd></div>
+                        <div class="specs__row"><dt>Video</dt><dd>HDMI 2.1</dd></div>
+                        <div class="specs__row"><dt>Funk</dt><dd>Wi-Fi 7 · BT 5.4</dd></div>
+                    </dl>
+                </details>
+
+                <details class="specs__group reveal" open style="--reveal-delay:.1s">
+                    <summary class="specs__group-title">Maße &amp; Material<svg class="specs__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                    <dl class="specs__list">
+                        <div class="specs__row"><dt>Abmessungen</dt><dd>22 × 14 × 14 cm</dd></div>
+                        <div class="specs__row"><dt>Gewicht</dt><dd>1,8 kg</dd></div>
+                        <div class="specs__row"><dt>Material</dt><dd>Alu · Geräucherte Eiche</dd></div>
+                        <div class="specs__row"><dt>Montage</dt><dd>werkzeugarm</dd></div>
+                    </dl>
+                </details>
+
+                <details class="specs__group reveal" open style="--reveal-delay:.15s">
+                    <summary class="specs__group-title">Betrieb &amp; Lieferung<svg class="specs__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+                    <dl class="specs__list">
+                        <div class="specs__row"><dt>Betriebssystem</dt><dd>SERVÅR OS (Linux)</dd></div>
+                        <div class="specs__row"><dt>Leistungsaufnahme</dt><dd>7–18 W</dd></div>
+                        <div class="specs__row"><dt>Lieferumfang</dt><dd>Server, Netzteil, Inbus</dd></div>
+                        <div class="specs__row"><dt>Art.-Nr.</dt><dd>503.847.63</dd></div>
+                    </dl>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         WAS ANDERE SAGEN — Reviews-Modul (wiederverwendet)
+         ==================================================== -->
+    <section class="module-section" id="reviews">
+        <div class="container">
+            <div class="section__header reveal">
+                <h2 class="section__title">Was andere sagen</h2>
+            </div>
+
+            <svg style="display:none" aria-hidden="true">
+                <defs>
+                    <path id="star-path" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.2 3.2 1.2-6.8L2 9.3l6.9-1z"/>
+                    <linearGradient id="half-star-grad" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="50%" stop-color="#111111"/>
+                        <stop offset="50%" stop-color="#D0D8E0"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <div class="reviews reveal">
+
+                <div class="reviews__panel reviews__panel--left">
+                    <h3 class="reviews__heading">Kundenstimmen</h3>
+
+                    <div class="reviews__slider-col">
+                        <div class="reviews__nav" aria-hidden="true">
+                            <button class="reviews__nav-btn" id="reviews-prev" tabindex="-1" aria-label="Zurück">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <button class="reviews__nav-btn" id="reviews-next" tabindex="-1" aria-label="Weiter">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="reviews__track" id="reviews-track">
+
+                            <article class="review-card">
+                                <h4 class="review-card__title">Einfacher als gedacht</h4>
+                                <div class="stars stars--sm" aria-label="5 von 5 Sternen">
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="stars__count">5</span>
+                                </div>
+                                <p class="review-card__body">„Ich hätte nicht gedacht, dass ein Heimserver so einfach sein kann. In einer Stunde war alles fertig."</p>
+                                <span class="review-card__author">Thomas K., München</span>
+                            </article>
+
+                            <article class="review-card">
+                                <h4 class="review-card__title">Endlich keine Cloud mehr</h4>
+                                <div class="stars stars--sm" aria-label="5 von 5 Sternen">
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="stars__count">5</span>
+                                </div>
+                                <p class="review-card__body">„Endlich keine Cloud mehr. Meine Fotos und Dokumente gehören wieder mir allein."</p>
+                                <span class="review-card__author">Sandra R., Berlin</span>
+                            </article>
+
+                            <article class="review-card">
+                                <h4 class="review-card__title">Aufbau wie beim KALLAX</h4>
+                                <div class="stars stars--sm" aria-label="5 von 5 Sternen">
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="stars__count">5</span>
+                                </div>
+                                <p class="review-card__body">„Der Aufbau war wirklich wie beim KALLAX. Ich hab sogar die Anleitung auf Anhieb verstanden."</p>
+                                <span class="review-card__author">Markus L., Hamburg</span>
+                            </article>
+
+                            <article class="review-card">
+                                <h4 class="review-card__title">Top Datenschutz, fairer Preis</h4>
+                                <div class="stars stars--sm" aria-label="4 von 5 Sternen">
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="star star--empty"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                    <span class="stars__count">4</span>
+                                </div>
+                                <p class="review-card__body">„Endlich ein Produkt, das Datenschutz ernst nimmt – und das zum fairen Einmalpreis."</p>
+                                <span class="review-card__author">Lena P., Köln</span>
+                            </article>
+
+                        </div><!-- /.reviews__track -->
+
+                        <div class="reviews__scrollbar-track" id="reviews-scrollbar-track" aria-hidden="true">
+                            <div class="reviews__scrollbar-thumb" id="reviews-scrollbar-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews__panel reviews__panel--right">
+                    <div class="reviews__stat-col">
+                        <div class="reviews__stat">
+                            <span class="reviews__stat-value" data-countup="4.8">0</span>
+                            <div class="stars stars--lg" aria-label="4,8 von 5 Sternen">
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star star--half"><svg viewBox="0 0 24 24"><use href="#star-path" fill="url(#half-star-grad)"/></svg></span>
+                            </div>
+                            <span class="reviews__stat-label">Bewertung</span>
+                        </div>
+
+                        <div class="reviews__stat">
+                            <span class="reviews__stat-value"><span data-countup="94">0</span> %</span>
+                            <span class="reviews__stat-label">würden SERVÅR weiterempfehlen</span>
+                        </div>
+
+                        <button class="btn btn--outline">Alle Bewertungen anzeigen</button>
+                    </div>
+                </div>
+
+            </div><!-- /.reviews -->
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SERVÅR BEI EUCH ZU HAUSE — Instagram-Feed (wiederverwendet)
+         ==================================================== -->
+    <section class="module-section module-section--alt" id="insta">
+        <div class="container">
+            <div class="insta-feed reveal">
+                <div>
+                    <h2 class="insta-feed__title">SERVÅR bei euch zu Hause</h2>
+                    <p class="insta-feed__subtitle">Echte Setups aus der Community</p>
+                </div>
+
+                <div class="insta-feed__slider-col">
+                    <div class="insta-feed__slider-wrapper">
+                        <div class="insta-feed__nav" aria-hidden="true">
+                            <button class="reviews__nav-btn is-hidden" id="insta-prev" tabindex="-1" aria-label="Zurück">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <button class="reviews__nav-btn" id="insta-next" tabindex="-1" aria-label="Weiter">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="insta-feed__track" id="insta-track">
+
+                            <button class="insta-card" data-handle="homelab_tom" data-count="3" data-card-index="0" aria-label="Beitrag von homelab_tom öffnen">
+                                <img class="insta-card__img" src="assets/img/community-1.webp" alt="SERVÅR-Setup von @homelab_tom" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">homelab_tom</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    3
+                                </span>
+                            </button>
+
+                            <button class="insta-card" data-handle="privacy_paula" data-count="2" data-card-index="1" aria-label="Beitrag von privacy_paula öffnen">
+                                <img class="insta-card__img" src="assets/img/community-2.webp" alt="SERVÅR-Setup von @privacy_paula" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">privacy_paula</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    2
+                                </span>
+                            </button>
+
+                            <button class="insta-card" data-handle="nas_nerd" data-count="4" data-card-index="2" aria-label="Beitrag von nas_nerd öffnen">
+                                <img class="insta-card__img" src="assets/img/community-3.webp" alt="SERVÅR-Setup von @nas_nerd" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">nas_nerd</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    4
+                                </span>
+                            </button>
+
+                            <button class="insta-card" data-handle="smarthome_sven" data-count="2" data-card-index="3" aria-label="Beitrag von smarthome_sven öffnen">
+                                <img class="insta-card__img" src="assets/img/community-4.webp" alt="SERVÅR-Setup von @smarthome_sven" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">smarthome_sven</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    2
+                                </span>
+                            </button>
+
+                            <button class="insta-card" data-handle="cleandesk_co" data-count="1" data-card-index="4" aria-label="Beitrag von cleandesk_co öffnen">
+                                <img class="insta-card__img" src="assets/img/community-5.webp" alt="SERVÅR-Setup von @cleandesk_co" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">cleandesk_co</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    1
+                                </span>
+                            </button>
+
+                            <button class="insta-card" data-handle="opensource_oli" data-count="3" data-card-index="5" aria-label="Beitrag von opensource_oli öffnen">
+                                <img class="insta-card__img" src="assets/img/community-6.webp" alt="SERVÅR-Setup von @opensource_oli" loading="lazy" decoding="async">
+
+                                <span class="insta-card__ig-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    <span class="insta-card__ig-name">opensource_oli</span>
+                                </span>
+                                <span class="insta-card__count" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    3
+                                </span>
+                            </button>
+
+                        </div><!-- /.insta-feed__track -->
+                    </div><!-- /.insta-feed__slider-wrapper -->
+
+                    <div class="insta-feed__scrollbar-track" id="insta-scrollbar-track" aria-hidden="true">
+                        <div class="insta-feed__scrollbar-thumb" id="insta-scrollbar-thumb"></div>
+                    </div>
+                </div>
+            </div><!-- /.insta-feed -->
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         CTA BAND
+         ==================================================== -->
+    <section class="cta-band">
+        <div class="container cta-band__inner">
+            <h2 class="cta-band__title reveal">Bereit für deinen<br>Power-Server?</h2>
+            <p class="cta-band__text reveal" style="--reveal-delay:.08s">Inbusschlüssel liegt bei.</p>
+            <div class="cta-band__price reveal" style="--reveal-delay:.12s">
+                <span class="price-tag">
+                    <span class="price-tag__name">SERVÅR Mörk · 8 TB</span>
+                    <span class="price-tag__price" data-main="1299" data-cents="–" data-currency="€"></span>
+                    <span class="price-tag__meta">Einmalpreis – kein Abo</span>
+                </span>
+            </div>
+            <div class="cta-band__actions reveal" style="--reveal-delay:.16s">
+                <button class="btn btn--yellow btn--lg" type="button" data-add-to-cart>Jetzt in den Warenkorb</button>
+                <button class="btn btn--outline" style="background:transparent;border-color:rgba(255,255,255,.6);color:#fff;" type="button" data-open-manual>Aufbauanleitung ansehen</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__top">
+            <div class="site-footer__brand-col">
+                <span class="brand">SERVÅR</span>
+                <p class="site-footer__tagline">Mehr Power. Edles Dark Design. Dein Pro-Server – designed in Schweden.</p>
+                <p class="site-footer__tagline" style="color:var(--color-text-faint);">SERVÅR · Art.-Nr. 503.847.63</p>
+            </div>
+
+            <div>
+                <h3 class="site-footer__col-title">Service</h3>
+                <nav class="site-footer__links" aria-label="Service">
+                    <a href="#" data-open-manual>Aufbauanleitung</a>
+                    <a href="#">FAQ &amp; Hilfe</a>
+                    <a href="#">Kontakt</a>
+                    <a href="#">Rückgabe &amp; Umtausch</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="site-footer__col-title">Rechtliches</h3>
+                <nav class="site-footer__links" aria-label="Rechtliches">
+                    <a href="#">Datenschutzerklärung</a>
+                    <a href="#">AGB</a>
+                    <a href="#">Impressum</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="site-footer__col-title">Social Media</h3>
+                <div class="site-footer__social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 16 12 10 15 10 9" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="#" aria-label="Threads">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7c2.5 0 3.5 1.5 3.5 3.5S14 14 12 14s-2.5 1-2.5 2 1 1.8 2.5 1.8 2.6-1 2.6-3.3"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer__versions">
+            <span class="site-footer__versions-label">SERVÅR Editionen</span>
+            <nav class="version-switch" aria-label="Produktversion wählen">
+                <a href="index.html" class="version-switch__link">Original</a>
+                <a href="mork.html"  class="version-switch__link is-active" aria-current="page">Mörk · Pro</a>
+                <a href="nomad.html" class="version-switch__link">Säker · Nomad</a>
+            </nav>
+        </div>
+
+        <div class="site-footer__bottom">
+            <span>© 2026 SERVÅR – Fiktives IKEA-Produkt · Semesterarbeit HFU Furtwangen</span>
+            <span>Kurs: Responsive Design · SoSe 2026 · Benedikt Mohr</span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ========================================================
+     FAB + CHAT MODAL (fixed)
+     ======================================================== -->
+<div class="fab-wrapper">
+    <div class="chat-modal" id="chat-modal" role="dialog" aria-modal="false" aria-labelledby="chat-modal-title">
+        <div class="chat-modal__header">
+            <span class="chat-modal__title" id="chat-modal-title">Willkommen bei SERVÅR Chat!</span>
+            <button class="chat-modal__close" id="chat-close" aria-label="Chat schließen">×</button>
+        </div>
+        <div class="chat-modal__body">
+            Hej! 👋 Fragen zum Aufbau, zur Privatsphäre oder zu den Modulen? Unser Team hilft dir gern weiter.
+            <br><br>
+            Tipp: Die meisten Antworten findest du schon in der <a href="#" data-open-manual>Aufbauanleitung</a>.
+        </div>
+        <div class="chat-modal__footer">
+            <button class="btn btn--dark btn--full" id="chat-start">Chat starten</button>
+        </div>
+    </div>
+
+    <button class="btn-fab" id="fab-btn" aria-label="Chat öffnen" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+</div>
+
+
+<!-- ========================================================
+     INSTAGRAM MODAL (fixed)
+     ======================================================== -->
+<div class="insta-modal" id="insta-modal" role="dialog" aria-modal="true" aria-labelledby="insta-modal-title">
+    <div class="insta-modal__panel">
+        <div class="insta-modal__header">
+            <h3 class="insta-modal__title" id="insta-modal-title">SERVÅR bei euch zu Hause</h3>
+            <button class="btn-icon insta-modal__close" id="insta-modal-close" aria-label="Modal schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="insta-modal__body">
+            <div class="insta-modal__image-col">
+                <div class="insta-modal__image-wrapper">
+                    <div id="insta-modal-img" style="width:100%;height:100%;"></div>
+                    <span class="insta-modal__handle" id="insta-modal-handle">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span id="insta-modal-username">–</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="insta-modal__products-col">
+
+                <div class="insta-product">
+                    <div class="insta-product__thumb"><img src="assets/img/produkt-basis.webp" alt="SERVÅR Basis-Einheit"></div>
+                    <div class="insta-product__info">
+                        <span class="insta-product__name">SERVÅR</span>
+                        <span class="insta-product__desc">Basis-Einheit, 2 TB</span>
+                        <span class="insta-product__price">499,<sup>–</sup>&nbsp;€</span>
+                    </div>
+                    <div class="insta-product__actions">
+                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+                        </button>
+                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="insta-product">
+                    <div class="insta-product__thumb"><img src="assets/img/produkt-modul.webp" alt="SERVÅR Erweiterungs-Modul"></div>
+                    <div class="insta-product__info">
+                        <span class="insta-product__badge">Neuer niedriger Preis</span>
+                        <span class="insta-product__name">SERVÅR</span>
+                        <span class="insta-product__desc">Erweiterungs-Modul, +12 TB</span>
+                        <span class="price-tag price-tag--offer">
+                            <span class="price-tag__price" data-main="299" data-cents="–" data-currency="€"></span>
+                        </span>
+                        <span class="insta-product__price-old">Vorher: 349,– €</span>
+                    </div>
+                    <div class="insta-product__actions">
+                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+                        </button>
+                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="insta-product">
+                    <div class="insta-product__thumb"><img src="assets/img/produkt-fixa.webp" alt="FIXA Inbusschlüssel"></div>
+                    <div class="insta-product__info">
+                        <span class="insta-product__name">FIXA</span>
+                        <span class="insta-product__desc">Ersatz-Inbusschlüssel, 4 mm</span>
+                        <span class="insta-product__price">2,<sup>–</sup>&nbsp;€</span>
+                    </div>
+                    <div class="insta-product__actions">
+                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+                        </button>
+                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================================
+     AUFBAUANLEITUNG MODAL (fixed)
+     ======================================================== -->
+<div class="manual-modal" id="manual-modal" role="dialog" aria-modal="true" aria-labelledby="manual-modal-title">
+    <div class="manual-modal__panel">
+        <div class="manual-modal__header">
+            <h3 class="manual-modal__title" id="manual-modal-title">SERVÅR · Aufbauanleitung</h3>
+            <button class="btn-icon manual-modal__close" id="manual-modal-close" aria-label="Anleitung schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="manual-modal__body">
+            <picture>
+                <source media="(max-width: 767px)" srcset="assets/img/aufbauanleitung-mobile.webp">
+                <img class="manual-modal__img" src="assets/img/aufbauanleitung.webp"
+                     alt="SERVÅR Aufbauanleitung – Schritt für Schritt" loading="lazy" decoding="async">
+            </picture>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/components.js"></script>
+<script src="js/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* ============================================================
+   LAYOUT — SERVÅR Design System
+   Container, Grid-Helfer, Utility-Klassen
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   CONTAINER
+   ---------------------------------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-inline: 40px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding-inline: 48px;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   GRID
+   Mobile-First: alles beginnt einsp., wächst ab Tablet.
+   ---------------------------------------------------------- */
+
+.grid {
+    display: grid;
+    gap: var(--grid-gap-md);
+}
+
+/* Basis: immer 1 Spalte auf Mobile */
+.grid--2,
+.grid--3,
+.grid--4 {
+    grid-template-columns: 1fr;
+}
+
+/* Ab Tablet: 2-col */
+@media (min-width: 768px) {
+    .grid--2 { grid-template-columns: repeat(2, 1fr); }
+    .grid--3 { grid-template-columns: repeat(2, 1fr); }
+    .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Ab Desktop: volle Spaltenzahl */
+@media (min-width: 1024px) {
+    .grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Auto-fit Varianten */
+.grid--auto-sm {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid--auto-md {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+
+/* ----------------------------------------------------------
+   FLEX UTILITIES
+   ---------------------------------------------------------- */
+
+.flex          { display: flex; }
+.flex-col      { display: flex; flex-direction: column; }
+.items-center  { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: var(--sp-1); }
+.gap-2 { gap: var(--sp-2); }
+.gap-3 { gap: var(--sp-3); }
+.gap-4 { gap: var(--sp-4); }
+
+
+/* ----------------------------------------------------------
+   SECTION WRAPPER
+   ---------------------------------------------------------- */
+
+.section {
+    padding-block: var(--sp-6);   /* Mobile: 48px */
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding-block: var(--sp-8);  /* Tablet: 64px */
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding-block: var(--sp-10); /* Desktop: 80px */
+    }
+}
+
+.section--alt {
+    background-color: var(--color-bg-alt);
+}
+
+.section__header {
+    margin-bottom: var(--sp-4);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section__header {
+        margin-bottom: var(--sp-6);
+    }
+}
+
+.section__title {
+    font-size: var(--fz-xl);         /* Mobile: 24px */
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    letter-spacing: var(--ls-tight);
+    position: relative;
+    display: inline-block;
+}
+
+.section__title::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background-color: var(--color-yellow);
+    margin-top: 8px;
+}
+
+.section__subtitle {
+    margin-top: var(--sp-2);
+    font-size: var(--fz-base);
+    color: var(--color-text-muted);
+    max-width: 560px;
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+    .section__title   { font-size: var(--fz-2xl); }  /* Tablet:  28px */
+    .section__subtitle { font-size: var(--fz-md); }
+}
+
+@media (min-width: 1024px) {
+    .section__title   { font-size: var(--fz-3xl); }  /* Desktop: 36px */
+}
+
+
+/* ----------------------------------------------------------
+   SPACING UTILITIES
+   ---------------------------------------------------------- */
+
+.mt-1 { margin-top: var(--sp-1); }
+.mt-2 { margin-top: var(--sp-2); }
+.mt-3 { margin-top: var(--sp-3); }
+.mt-4 { margin-top: var(--sp-4); }
+.mb-2 { margin-bottom: var(--sp-2); }
+.mb-3 { margin-bottom: var(--sp-3); }
+
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-text-muted); }
+.text-sm     { font-size: var(--fz-sm); }
+.text-bold   { font-weight: var(--fw-bold); }

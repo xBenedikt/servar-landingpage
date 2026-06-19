@@ -1,0 +1,12 @@
+/* ============================================================
+   MAIN — SERVÅR Landingpage
+   Importiert alle Teilmodule in der richtigen Reihenfolge.
+   Nur page-spezifische Overrides kommen direkt hierhin.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+@import 'tokens.css';
+@import 'reset.css';
+@import 'components.css';
+@import 'layout.css';

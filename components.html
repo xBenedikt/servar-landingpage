@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVÅR – Komponentenbibliothek</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        /* ------------------------------------------------
+           Nur für diese Seite: Showcase-Styles
+           ------------------------------------------------ */
+        body {
+            background-color: #F0F2F5;
+        }
+
+        .lib-header {
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            padding: var(--sp-4) var(--sp-6);
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            display: flex;
+            align-items: center;
+            gap: var(--sp-3);
+        }
+
+        .lib-header__logo {
+            font-size: var(--fz-xl);
+            font-weight: var(--fw-black);
+            letter-spacing: var(--ls-wider);
+            color: var(--color-yellow);
+        }
+
+        .lib-header__title {
+            font-size: var(--fz-sm);
+            color: rgba(255,255,255,0.6);
+            font-weight: var(--fw-regular);
+        }
+
+        .lib-nav {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0 var(--sp-6);
+            display: flex;
+            gap: var(--sp-4);
+            overflow-x: auto;
+        }
+
+        .lib-nav__link {
+            padding: 14px 0;
+            font-size: var(--fz-sm);
+            font-weight: var(--fw-bold);
+            color: var(--color-text-muted);
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            transition: color var(--transition-fast), border-color var(--transition-fast);
+        }
+
+        .lib-nav__link:hover {
+            color: var(--color-text);
+            border-color: var(--color-blue);
+        }
+
+        .lib-main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: var(--sp-8) var(--sp-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-8);
+        }
+
+        .lib-section {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            padding: var(--sp-6);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lib-section__title {
+            font-size: var(--fz-xs);
+            font-weight: var(--fw-bold);
+            letter-spacing: var(--ls-wider);
+            text-transform: uppercase;
+            color: var(--color-gray-500);
+            margin-bottom: var(--sp-4);
+            padding-bottom: var(--sp-2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .lib-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--sp-3);
+            margin-bottom: var(--sp-4);
+        }
+
+        .lib-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .lib-label {
+            display: block;
+            font-size: var(--fz-xs);
+            color: var(--color-text-muted);
+            margin-bottom: 6px;
+        }
+
+        .lib-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lib-divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: var(--sp-4) 0;
+        }
+
+        .lib-on-dark {
+            background-color: var(--color-dark-blue);
+            border-radius: 6px;
+            padding: var(--sp-3) var(--sp-4);
+        }
+
+        .lib-code {
+            display: inline-block;
+            background-color: var(--color-gray-100);
+            color: var(--color-blue);
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-top: 4px;
+        }
+
+        /* Showcase responsive */
+        @media (max-width: 767px) {
+            .lib-header  { padding: var(--sp-2) var(--sp-3); }
+            .lib-nav     { padding: 0 var(--sp-3); gap: var(--sp-3); }
+            .lib-main    { padding: var(--sp-4) var(--sp-2); gap: var(--sp-4); }
+            .lib-section { padding: var(--sp-3); }
+            .lib-row     { gap: var(--sp-2); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================
+     HEADER
+     ======================================================== -->
+<header class="lib-header">
+    <span class="lib-header__logo">SERVÅR</span>
+    <span class="lib-header__title">Komponentenbibliothek · v0.1</span>
+</header>
+
+<!-- ========================================================
+     NAV
+     ======================================================== -->
+<nav class="lib-nav" aria-label="Komponenten-Sprungmarken">
+    <a href="#buttons"   class="lib-nav__link">Buttons</a>
+    <a href="#icon-btns" class="lib-nav__link">Icon Buttons</a>
+    <a href="#fab"       class="lib-nav__link">FAB &amp; Chat</a>
+    <a href="#stepper"   class="lib-nav__link">Stepper</a>
+    <a href="#sizes"     class="lib-nav__link">Größen-Auswahl</a>
+    <a href="#reviews"   class="lib-nav__link">Kundenbewertungen</a>
+    <a href="#insta"     class="lib-nav__link">Discover Instagram</a>
+</nav>
+
+
+<main class="lib-main">
+
+    <!-- ====================================================
+         SECTION: BUTTONS
+         ==================================================== -->
+    <section class="lib-section" id="buttons">
+        <h2 class="lib-section__title">Buttons</h2>
+
+        <!-- Primary -->
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">Primary</span>
+                <button class="btn btn--primary">In den Warenkorb</button>
+                <code class="lib-code">.btn.btn--primary</code>
+            </div>
+            <div class="lib-item">
+                <span class="lib-label">Primary · disabled</span>
+                <button class="btn btn--primary" disabled>In den Warenkorb</button>
+            </div>
+            <div class="lib-item">
+                <span class="lib-label">Primary · success</span>
+                <button class="btn btn--primary btn--success">✓ Hinzugefügt!</button>
+            </div>
+        </div>
+
+        <hr class="lib-divider">
+
+        <!-- Outline -->
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">Outline</span>
+                <button class="btn btn--outline">Alle Bewertungen anzeigen</button>
+                <code class="lib-code">.btn.btn--outline</code>
+            </div>
+            <div class="lib-item">
+                <span class="lib-label">Outline · klein</span>
+                <button class="btn btn--outline" style="font-size: var(--fz-sm); padding: 10px 20px;">Mehr anzeigen</button>
+            </div>
+        </div>
+
+        <hr class="lib-divider">
+
+        <!-- Ghost -->
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">Ghost · Login</span>
+                <button class="btn btn--ghost">
+                    <!-- Person-Icon -->
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                    </svg>
+                    Hej! Hier einloggen
+                </button>
+                <code class="lib-code">.btn.btn--ghost</code>
+            </div>
+        </div>
+
+        <hr class="lib-divider">
+
+        <!-- Dark -->
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">Dark</span>
+                <button class="btn btn--dark">Chat starten</button>
+                <code class="lib-code">.btn.btn--dark</code>
+            </div>
+            <div class="lib-item">
+                <span class="lib-label">Dark · full width</span>
+                <div style="width: 280px;">
+                    <button class="btn btn--dark btn--full">Chat starten</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: ICON BUTTONS
+         ==================================================== -->
+    <section class="lib-section" id="icon-btns">
+        <h2 class="lib-section__title">Icon Buttons</h2>
+
+        <div class="lib-row">
+
+            <!-- Wishlist -->
+            <div class="lib-item">
+                <span class="lib-label">Wishlist (Toggle)</span>
+                <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten hinzufügen" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>
+                    </svg>
+                </button>
+                <code class="lib-code">.btn-icon.btn-icon--wishlist</code>
+            </div>
+
+            <!-- Share -->
+            <div class="lib-item">
+                <span class="lib-label">Share</span>
+                <button class="btn-icon" aria-label="Teilen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="18" cy="5" r="3"/>
+                        <circle cx="6" cy="12" r="3"/>
+                        <circle cx="18" cy="19" r="3"/>
+                        <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
+                        <line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Close -->
+            <div class="lib-item">
+                <span class="lib-label">Close</span>
+                <button class="btn-icon" aria-label="Schließen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mini Add to Cart (primary) -->
+            <div class="lib-item">
+                <span class="lib-label">Add to Cart · mini (primary)</span>
+                <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                        <line x1="19" y1="2" x2="19" y2="8"/>
+                        <line x1="16" y1="5" x2="22" y2="5"/>
+                    </svg>
+                </button>
+                <code class="lib-code">.btn-icon.btn-icon--primary</code>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: FAB & CHAT MODAL
+         ==================================================== -->
+    <section class="lib-section" id="fab">
+        <h2 class="lib-section__title">Floating Action Button &amp; Chat Modal</h2>
+        <p style="font-size:var(--fz-sm); color:var(--color-text-muted); margin-bottom:var(--sp-4);">
+            Der FAB und das Chat-Modal sind rechts unten auf dieser Seite aktiv (fixed position). Klicke auf den gelben Button.
+        </p>
+
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">FAB · gelb</span>
+                <button class="btn-fab" style="position:relative;" aria-label="Chat öffnen (Demo)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </button>
+                <code class="lib-code">.btn-fab</code>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: QUANTITY STEPPER + ADD TO CART ROW
+         ==================================================== -->
+    <section class="lib-section" id="stepper">
+        <h2 class="lib-section__title">Quantity Stepper &amp; Add-to-Cart-Zeile</h2>
+
+        <!-- Standalone Stepper -->
+        <div class="lib-row">
+            <div class="lib-item">
+                <span class="lib-label">Stepper · standalone</span>
+                <div class="qty-stepper" role="group" aria-label="Menge">
+                    <button class="qty-stepper__btn" id="qty-minus" aria-label="Menge verringern">−</button>
+                    <span class="qty-stepper__value" id="qty-value" aria-live="polite">1</span>
+                    <button class="qty-stepper__btn" id="qty-plus" aria-label="Menge erhöhen">+</button>
+                </div>
+                <code class="lib-code">.qty-stepper</code>
+            </div>
+        </div>
+
+        <hr class="lib-divider">
+
+        <!-- Stepper + CTA -->
+        <div class="lib-item" style="max-width: 480px;">
+            <span class="lib-label">Stepper + Primary CTA (kombiniert)</span>
+            <div class="add-to-cart-row">
+                <div class="qty-stepper" role="group" aria-label="Menge">
+                    <button class="qty-stepper__btn" data-action="minus" aria-label="Menge verringern">−</button>
+                    <span class="qty-stepper__value" data-qty-display>1</span>
+                    <button class="qty-stepper__btn" data-action="plus" aria-label="Menge erhöhen">+</button>
+                </div>
+                <button class="btn btn--primary" id="add-to-cart-btn" data-qty-ref>
+                    In den Warenkorb
+                </button>
+            </div>
+            <code class="lib-code">.add-to-cart-row</code>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: SIZE SELECTOR
+         ==================================================== -->
+    <section class="lib-section" id="sizes">
+        <h2 class="lib-section__title">Größen-Auswahl</h2>
+
+        <div class="lib-item" style="max-width: 480px;">
+            <div class="size-selector">
+                <span class="size-selector__label">Größe</span>
+                <div class="size-selector__options" role="group" aria-label="Größe wählen">
+                    <button class="size-option size-option--selected" aria-pressed="true">
+                        23×31×15 cm
+                    </button>
+                    <button class="size-option" aria-pressed="false">
+                        46×31×25 cm
+                        <span class="size-option__surcharge">+2,00 €</span>
+                    </button>
+                    <button class="size-option" aria-pressed="false">
+                        60×40×30 cm
+                        <span class="size-option__surcharge">+5,00 €</span>
+                    </button>
+                </div>
+            </div>
+            <code class="lib-code">.size-selector  /  .size-option.size-option--selected</code>
+        </div>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: KUNDENBEWERTUNGEN
+         ==================================================== -->
+    <section class="lib-section" id="reviews">
+        <h2 class="lib-section__title">Kundenbewertungen</h2>
+
+        <!-- Wiederverwendbares Stern-Shorthand (inline SVG, farbe via CSS) -->
+        <svg style="display:none">
+            <defs>
+                <path id="star-path" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.2 3.2 1.2-6.8L2 9.3l6.9-1z"/>
+                <linearGradient id="half-star-grad" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="50%" stop-color="#111111"/>
+                    <stop offset="50%" stop-color="#D0D8E0"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="reviews">
+
+            <!-- Linkes Panel: grauer Hintergrund — Heading + Slider -->
+            <div class="reviews__panel reviews__panel--left">
+                <h3 class="reviews__heading">Kundenbewertungen</h3>
+
+                <div class="reviews__slider-col">
+
+                    <!-- Pfeil-Navigation (erscheint beim Hover) -->
+                    <div class="reviews__nav" aria-hidden="true">
+                        <button class="reviews__nav-btn" id="reviews-prev" tabindex="-1" aria-label="Zurück">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="reviews__nav-btn" id="reviews-next" tabindex="-1" aria-label="Weiter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Karten -->
+                    <div class="reviews__track" id="reviews-track">
+
+                        <article class="review-card">
+                            <h4 class="review-card__title">Ein schönes Produkt mit vielen Möglichkeiten</h4>
+                            <div class="stars stars--sm" aria-label="4 von 5 Sternen">
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star star--empty"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="stars__count">4</span>
+                            </div>
+                            <p class="review-card__body">Sehr gut geeignet für die Vorratshaltung, aber auch hübsch dekoriert als Tischdekoration verwendbar.</p>
+                            <span class="review-card__author">Susanne, Deutschland</span>
+                        </article>
+
+                        <article class="review-card">
+                            <h4 class="review-card__title">Der Allrounder</h4>
+                            <div class="stars stars--sm" aria-label="5 von 5 Sternen">
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="stars__count">5</span>
+                            </div>
+                            <p class="review-card__body">Das Produkt hat die perfekte Größe. Kann ich nur empfehlen.</p>
+                            <span class="review-card__author">Natascha, Deutschland</span>
+                        </article>
+
+                        <article class="review-card">
+                            <h4 class="review-card__title">Praktischer Alltagshelfer</h4>
+                            <div class="stars stars--sm" aria-label="5 von 5 Sternen">
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="stars__count">5</span>
+                            </div>
+                            <p class="review-card__body">Super Preis-Leistungs-Verhältnis. Gut zu reinigen, Preis Leistung passt.</p>
+                            <span class="review-card__author">Nicole, Deutschland</span>
+                        </article>
+
+                        <article class="review-card">
+                            <h4 class="review-card__title">Genau wie erwartet</h4>
+                            <div class="stars stars--sm" aria-label="4 von 5 Sternen">
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="star star--empty"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                                <span class="stars__count">4</span>
+                            </div>
+                            <p class="review-card__body">Schnelle Lieferung, gut verpackt. Entspricht der Beschreibung auf der Webseite.</p>
+                            <span class="review-card__author">Thomas, Österreich</span>
+                        </article>
+
+                    </div><!-- /.reviews__track -->
+
+                    <!-- Custom Scrollbar -->
+                    <div class="reviews__scrollbar-track" id="reviews-scrollbar-track" aria-hidden="true">
+                        <div class="reviews__scrollbar-thumb" id="reviews-scrollbar-thumb"></div>
+                    </div>
+
+                </div><!-- /.reviews__slider-col -->
+            </div><!-- /.reviews__panel--left -->
+
+            <!-- Rechtes Panel: weißer Hintergrund — Stats + Button -->
+            <div class="reviews__panel reviews__panel--right">
+                <div class="reviews__stat-col">
+                    <div class="reviews__stat">
+                        <span class="reviews__stat-value">4.6</span>
+                        <div class="stars stars--lg" aria-label="4,6 von 5 Sternen">
+                            <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                            <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                            <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                            <span class="star"><svg viewBox="0 0 24 24"><use href="#star-path"/></svg></span>
+                            <span class="star star--half">
+                                <svg viewBox="0 0 24 24"><use href="#star-path" fill="url(#half-star-grad)"/></svg>
+                            </span>
+                        </div>
+                        <span class="reviews__stat-label">Bewertung</span>
+                    </div>
+
+                    <div class="reviews__stat">
+                        <span class="reviews__stat-value">2413</span>
+                        <span class="reviews__stat-label">Bewertungen</span>
+                    </div>
+
+                    <button class="btn btn--outline">Alle Bewertungen anzeigen</button>
+                </div>
+            </div><!-- /.reviews__panel--right -->
+
+        </div><!-- /.reviews -->
+
+        <code class="lib-code" style="margin-top:var(--sp-3); display:inline-block;">.reviews  /  .review-card  /  .stars  /  .btn.btn--outline</code>
+    </section>
+
+
+    <!-- ====================================================
+         SECTION: DISCOVER INSTAGRAM
+         ==================================================== -->
+    <section class="lib-section" id="insta">
+        <h2 class="lib-section__title">Discover Instagram</h2>
+
+        <div class="insta-feed">
+            <div>
+                <h3 class="insta-feed__title">Entdeckt bei euch zu Hause</h3>
+                <p class="insta-feed__subtitle">Klicke, basierend auf deinem Produkt</p>
+            </div>
+
+            <div class="insta-feed__slider-col">
+
+                <!-- Wrapper: Nav-Buttons werden relativ zum Track zentriert -->
+                <div class="insta-feed__slider-wrapper">
+                    <div class="insta-feed__nav" aria-hidden="true">
+                        <button class="reviews__nav-btn is-hidden" id="insta-prev" tabindex="-1" aria-label="Zurück">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="reviews__nav-btn" id="insta-next" tabindex="-1" aria-label="Weiter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                <!-- Bilder-Track -->
+                <div class="insta-feed__track" id="insta-track">
+
+                    <button class="insta-card" data-handle="potipiomara" data-count="3" data-card-index="0" aria-label="Beitrag von potipiomara öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-20));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">potipiomara</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            3
+                        </span>
+                    </button>
+
+                    <button class="insta-card" data-handle="hemmet_huset" data-count="2" data-card-index="1" aria-label="Beitrag von hemmet_huset öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-17));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">hemmet_huset</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            2
+                        </span>
+                    </button>
+
+                    <button class="insta-card" data-handle="mein_zuhause_de" data-count="4" data-card-index="2" aria-label="Beitrag von mein_zuhause_de öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-01));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">mein_zuhause_de</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            4
+                        </span>
+                    </button>
+
+                    <button class="insta-card" data-handle="nordic.living" data-count="2" data-card-index="3" aria-label="Beitrag von nordic.living öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-10));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">nordic.living</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            2
+                        </span>
+                    </button>
+
+                    <button class="insta-card" data-handle="scandi_home" data-count="1" data-card-index="4" aria-label="Beitrag von scandi_home öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-15));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">scandi_home</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            1
+                        </span>
+                    </button>
+
+                    <button class="insta-card" data-handle="ikea.fans" data-count="3" data-card-index="5" aria-label="Beitrag von ikea.fans öffnen">
+                        <div class="insta-card__img" style="background:rgb(var(--colour-extended-palette-06));width:100%;height:100%;"></div>
+                        <span class="insta-card__ig-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="insta-card__ig-name">ikea.fans</span>
+                        </span>
+                        <span class="insta-card__count" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            3
+                        </span>
+                    </button>
+
+                </div><!-- /.insta-feed__track -->
+                </div><!-- /.insta-feed__slider-wrapper -->
+
+                <div class="insta-feed__scrollbar-track" id="insta-scrollbar-track" aria-hidden="true">
+                    <div class="insta-feed__scrollbar-thumb" id="insta-scrollbar-thumb"></div>
+                </div>
+
+            </div><!-- /.insta-feed__slider-col -->
+        </div><!-- /.insta-feed -->
+
+        <code class="lib-code" style="margin-top:var(--sp-3);display:inline-block;">.insta-feed  /  .insta-card  /  .insta-modal</code>
+    </section>
+
+
+</main>
+
+
+<!-- ========================================================
+     INSTAGRAM MODAL (fixed)
+     ======================================================== -->
+<div class="insta-modal" id="insta-modal" role="dialog" aria-modal="true" aria-labelledby="insta-modal-title">
+    <div class="insta-modal__panel">
+
+        <!-- Volle Breite: Header -->
+        <div class="insta-modal__header">
+            <h3 class="insta-modal__title" id="insta-modal-title">Entdeckt bei euch zu Hause</h3>
+            <button class="btn-icon insta-modal__close" id="insta-modal-close" aria-label="Modal schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Zweispaltiger Body -->
+        <div class="insta-modal__body">
+
+        <!-- Linke Seite: Bild -->
+        <div class="insta-modal__image-col">
+            <div class="insta-modal__image-wrapper">
+                <div id="insta-modal-img" style="width:100%;height:100%;"></div>
+                <span class="insta-modal__handle" id="insta-modal-handle">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span id="insta-modal-username">–</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Rechte Seite: Produktliste -->
+        <div class="insta-modal__products-col">
+
+            <div class="insta-product">
+                <div class="insta-product__thumb" style="background:rgb(var(--colour-extended-palette-20));"></div>
+                <div class="insta-product__info">
+                    <span class="insta-product__name">KNAGGLIG</span>
+                    <span class="insta-product__desc">Kistchen, 23×31×15 cm</span>
+                    <span class="insta-product__price">7,<sup>–</sup></span>
+                </div>
+                <div class="insta-product__actions">
+                    <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="insta-product">
+                <div class="insta-product__thumb" style="background:rgb(var(--colour-extended-palette-21));"></div>
+                <div class="insta-product__info">
+                    <span class="insta-product__badge">Neuer niedriger Preis</span>
+                    <span class="insta-product__name">KNAGGLIG</span>
+                    <span class="insta-product__desc">Kistchen, 31×25 cm</span>
+                    <span class="insta-product__price">9,<sup>99</sup></span>
+                    <span class="insta-product__price-old">Vorher: 14,99 €</span>
+                </div>
+                <div class="insta-product__actions">
+                    <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="insta-product">
+                <div class="insta-product__thumb" style="background:rgb(var(--colour-extended-palette-01));"></div>
+                <div class="insta-product__info">
+                    <span class="insta-product__name">RISATORP</span>
+                    <span class="insta-product__desc">Korb, 25×26×18 cm</span>
+                    <span class="insta-product__price">9,<sup>–</sup></span>
+                </div>
+                <div class="insta-product__actions">
+                    <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /.insta-modal__products-col -->
+        </div><!-- /.insta-modal__body -->
+
+    </div><!-- /.insta-modal__panel -->
+</div><!-- /.insta-modal -->
+
+
+<!-- ========================================================
+     FLOATING ACTION BUTTON (fixed, rechts unten)
+     ======================================================== -->
+<div class="fab-wrapper">
+    <!-- Chat Modal -->
+    <div class="chat-modal" id="chat-modal" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+        <div class="chat-modal__header">
+            <h3 class="chat-modal__title" id="chat-title">Willkommen bei SERVÅR Chat!</h3>
+            <button class="chat-modal__close" id="chat-close" aria-label="Chat schließen">×</button>
+        </div>
+        <div class="chat-modal__body">
+            <p>Unser Chatbot antwortet direkt auf deine Nachrichten und hilft dir bei Fragen rund um SERVÅR — von der Montage bis zur Bestellung.</p>
+        </div>
+        <div class="chat-modal__footer">
+            <button class="btn btn--dark btn--full" id="chat-start">Chat starten</button>
+        </div>
+    </div>
+
+    <!-- FAB -->
+    <button class="btn-fab" id="fab-btn" aria-label="Chat öffnen" aria-expanded="false" aria-controls="chat-modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+</div>
+
+
+<script src="js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* ============================================================
+   THEMES — SERVÅR Editionen
+   Eine Codebasis, drei Zielgruppen. Aktiviert über eine Klasse am
+   <body>:  (keine)        → Original / Trä  (hell, IKEA-Blau/Gelb)
+            .theme-mork    → Mörk / Pro      (dunkel, kühl-blau, edel)
+            .theme-nomad   → Säker / Nomad   (erdig, oliv, robust)
+   Plus: Versions-Umschalter-Leiste ganz oben (auf allen Seiten gleich).
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   VERSIONS-UMSCHALTER (im Footer) — theme-bewusst
+   Nutzt Token-Variablen, funktioniert daher auf hellem (Original/Nomad)
+   wie dunklem (Mörk) Footer.
+   ---------------------------------------------------------- */
+
+.site-footer__versions {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--sp-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+}
+
+.site-footer__versions-label {
+    font-size: var(--fz-xs);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+}
+
+.version-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.version-switch__link {
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: var(--fz-xs);
+    font-weight: var(--fw-bold);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    line-height: 1;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.version-switch__link:hover { color: var(--color-text); }
+
+.version-switch__link.is-active {
+    background: var(--color-blue);
+    color: #fff;
+}
+
+@media (max-width: 479px) {
+    .site-footer__versions-label { display: none; }
+    .version-switch__link { padding: 6px 11px; }
+}
+
+
+/* ============================================================
+   MÖRK / PRO — Dark-Theme
+   ============================================================ */
+
+body.theme-mork {
+    /* Token-Overrides (kaskadieren in die ganze Seite) */
+    --color-text:        #eef1f5;
+    --color-text-muted:  #a7aeb8;
+    --color-text-faint:  #6e757f;
+    --color-border:      rgba(255, 255, 255, 0.12);
+    --color-blue:        #4da3ff;   /* kühler Akzent / „Leuchtring" */
+    --color-bg-alt:      #16191f;   /* abgesetzte Flächen (Feature/Modul/Reviews) */
+
+    background-color: #0e1014;
+    color: #eef1f5;
+}
+
+/* Marken-Pill: dunkler Text auf Gelb (sonst zu wenig Kontrast) */
+.theme-mork .brand { color: #0e1014; }
+
+/* Header dunkel + Glas-Effekt */
+.theme-mork .site-header { background-color: rgba(14, 16, 20, 0.82); }
+.theme-mork .site-header.is-scrolled { border-bottom-color: var(--color-border); }
+
+/* Mobiles Burger-Panel dunkel (sonst helle Fläche + heller Text) */
+.theme-mork .site-nav { background-color: #14171c; }
+
+/* Hero dunkel + Video abdunkeln */
+.theme-mork .hero { background-color: #0c0e12; }
+.theme-mork .hero__video { filter: brightness(0.62) contrast(1.05); }
+.theme-mork .hero__kicker {
+    color: var(--color-blue);
+    background: rgba(77, 163, 255, 0.10);
+    border-color: rgba(77, 163, 255, 0.28);
+}
+.theme-mork .hero__scrim {
+    background: linear-gradient(96deg,
+        rgba(12, 14, 18, 0.97) 0%,
+        rgba(12, 14, 18, 0.95) 16%,
+        rgba(12, 14, 18, 0.6) 40%,
+        rgba(12, 14, 18, 0.18) 60%,
+        rgba(12, 14, 18, 0) 76%);
+}
+@media (max-width: 767px) {
+    .theme-mork .hero__scrim {
+        background: linear-gradient(180deg,
+            rgba(12, 14, 18, 0.96) 0%,
+            rgba(12, 14, 18, 0.86) 18%,
+            rgba(12, 14, 18, 0.4) 42%,
+            rgba(12, 14, 18, 0.18) 62%,
+            rgba(12, 14, 18, 0.66) 100%);
+    }
+}
+
+/* Helle Flächen → dunkel */
+.theme-mork .trust,
+.theme-mork .specs,
+.theme-mork .site-footer { background-color: #0e1014; }
+
+.theme-mork .feature { background-color: #121419; }
+
+.theme-mork .trust__item { background-color: #16191f; border-color: var(--color-border); }
+.theme-mork .trust__icon { background-color: rgba(77, 163, 255, 0.12); color: var(--color-blue); }
+
+/* Specs: dunkles Punktraster + dunkle Flächen */
+.theme-mork .specs { background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1.1px, transparent 1.1px); }
+
+/* Assembly dunkel */
+.theme-mork .assembly { background-color: #101216; }
+.theme-mork .assembly__sticky::before {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.2px, transparent 1.2px);
+}
+.theme-mork .assembly__step { border-color: var(--color-border); }
+@media (max-width: 1023px) {
+    /* aktive Schritt-Karte dunkel (sonst weiße Karte + heller Text) */
+    .theme-mork .assembly__step { background-color: #16191f; }
+}
+
+/* Bilder einbetten (dezent abdunkeln, passt zur Dark-Bühne) */
+.theme-mork .feature__media-img,
+.theme-mork .insta-card__img,
+.theme-mork .assembly__canvas { filter: brightness(0.86) contrast(1.04); }
+
+/* Modul-Sektion (Instagram) */
+.theme-mork .module-section--alt { background-color: #121419; }
+
+/* Reviews-Panels */
+.theme-mork .reviews__panel--left { background-color: #14171c; }
+.theme-mork .reviews__panel--right { background-color: #0e1014; }
+
+/* Outline-Button auf Dunkel lesbar */
+.theme-mork .btn--outline { color: var(--color-text); border-color: var(--color-border); }
+.theme-mork .btn--outline:hover { background-color: rgba(255, 255, 255, 0.06); }
+
+/* CTA-Band: tiefes Marine statt hellem Akzentblau */
+.theme-mork .cta-band { background-color: #101723; }
+
+/* Modals dunkel */
+.theme-mork .insta-modal__panel,
+.theme-mork .manual-modal__panel,
+.theme-mork .chat-modal { background-color: #16191f; }
+.theme-mork .manual-modal__body { background-color: #0e1014; }
+.theme-mork .insta-product { border-color: var(--color-border); }
+
+
+/* ============================================================
+   SÄKER / NOMAD — Erd-Theme (robust, oliv/terrakotta, warm)
+   ============================================================ */
+
+body.theme-nomad {
+    --color-blue:   #5d6b35;   /* Oliv als Primär-Akzent */
+    --color-bg-alt: #ece5d6;   /* warmes Sand */
+
+    background-color: #f6f2e9;
+}
+
+/* Akzent-Flächen warm einfärben */
+.theme-nomad .hero { background-color: #e9e2d1; }
+.theme-nomad .assembly { background-color: #e5ddc9; }
+.theme-nomad .trust,
+.theme-nomad .specs,
+.theme-nomad .site-footer { background-color: #f6f2e9; }
+
+/* Hero-Kicker in Oliv */
+.theme-nomad .hero__kicker {
+    color: var(--color-blue);
+    background: rgba(93, 107, 53, 0.10);
+    border-color: rgba(93, 107, 53, 0.28);
+}
+
+/* Trust-Icons in Oliv */
+.theme-nomad .trust__icon { background-color: rgba(93, 107, 53, 0.12); color: var(--color-blue); }
+
+/* CTA-Band: Oliv statt Blau */
+.theme-nomad .cta-band { background-color: #4f5d2c; }
+
+/* Specs-Punktraster in Oliv-Ton */
+.theme-nomad .specs { background-image: radial-gradient(rgba(93, 107, 53, 0.07) 1.1px, transparent 1.1px); }

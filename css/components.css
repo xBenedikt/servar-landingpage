@@ -1,0 +1,1352 @@
+/* ============================================================
+   COMPONENTS — SERVÅR Design System
+   Atoms & Molecules: Buttons, Icon-Buttons, Stepper,
+   Size-Selector, FAB, Chat-Modal, Stars, Review-Card,
+   Kundenbewertungen-Modul
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   BASE BUTTON
+   Alle .btn--* Varianten erben diese Basis-Styles.
+   ---------------------------------------------------------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-family);
+    font-size: var(--fz-base);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+    user-select: none;
+    transition:
+        background-color var(--transition-fast),
+        border-color     var(--transition-fast),
+        color            var(--transition-fast),
+        box-shadow       var(--transition-fast),
+        transform        var(--transition-fast);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--color-yellow);
+    outline-offset: 2px;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Breite Variante */
+.btn--full {
+    width: 100%;
+}
+
+
+/* ----------------------------------------------------------
+   PRIMARY — Blau  |  "In den Warenkorb"
+   ---------------------------------------------------------- */
+
+.btn--primary {
+    background-color: var(--color-btn-primary-bg);
+    border-color:     var(--color-btn-primary-bg);
+    color:            var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-btn-primary-bg-hover);
+    border-color:     var(--color-btn-primary-bg-hover);
+}
+
+.btn--primary:active {
+    background-color: var(--color-btn-primary-bg-press);
+    border-color:     var(--color-btn-primary-bg-press);
+    transform: scale(0.96);
+}
+
+
+/* ----------------------------------------------------------
+   OUTLINE — Schwarz, transparent  |  "Alle Bewertungen anzeigen"
+   ---------------------------------------------------------- */
+
+.btn--outline {
+    background-color: rgb(var(--colour-interactive-subtle-bg-default));
+    border-color:     rgb(var(--colour-interactive-subtle-border-default));
+    color:            var(--color-black);
+    padding: 12px 24px;
+}
+
+.btn--outline:hover {
+    background-color: var(--color-btn-subtle-bg-hover);
+    border-color:     var(--color-btn-outline-border-hover);
+}
+
+.btn--outline:active {
+    background-color: var(--color-btn-subtle-bg-press);
+    border-color:     var(--color-btn-outline-border-hover);
+    transform: scale(0.96);
+}
+
+
+/* ----------------------------------------------------------
+   GHOST — Kein Rahmen, kein Bg  |  "Hej! Hier einloggen"
+   ---------------------------------------------------------- */
+
+.btn--ghost {
+    background-color: transparent;
+    border-color:     transparent;
+    color:            var(--color-black);
+    padding:          8px 14px;
+    font-weight:      var(--fw-regular);
+    font-size:        var(--fz-sm);
+}
+
+.btn--ghost:hover {
+    background-color: var(--color-btn-subtle-bg-hover);
+}
+
+.btn--ghost:active {
+    background-color: var(--color-btn-subtle-bg-press);
+    transform: scale(0.97);
+}
+
+.btn--ghost .btn__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------------
+   DARK — Schwarz, weiß  |  "Chat starten"
+   ---------------------------------------------------------- */
+
+.btn--dark {
+    background-color: var(--color-btn-dark-bg);
+    border-color:     var(--color-btn-dark-bg);
+    color:            var(--color-white);
+}
+
+.btn--dark:hover {
+    background-color: var(--color-btn-dark-bg-hover);
+    border-color:     var(--color-btn-dark-bg-hover);
+}
+
+.btn--dark:active {
+    background-color: var(--color-btn-dark-bg-press);
+    border-color:     var(--color-btn-dark-bg-press);
+    transform: scale(0.97);
+}
+
+
+/* ----------------------------------------------------------
+   SUCCESS STATE — nach "In den Warenkorb" geklickt
+   ---------------------------------------------------------- */
+
+.btn--success {
+    background-color: var(--color-success) !important;
+    border-color:     var(--color-success) !important;
+    color:            var(--color-white)   !important;
+}
+
+
+/* ----------------------------------------------------------
+   ICON BUTTON — Rund, kein Bg  |  Wishlist-Herz
+   ---------------------------------------------------------- */
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:  44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--color-black);
+    transition:
+        background-color var(--transition-fast),
+        transform        var(--transition-fast);
+}
+
+.btn-icon:focus-visible {
+    outline: 3px solid var(--color-yellow);
+    outline-offset: 2px;
+}
+
+.btn-icon:hover {
+    background-color: var(--color-gray-200);
+}
+
+.btn-icon:active {
+    background-color: var(--color-gray-300);
+    transform: scale(0.90);
+}
+
+.btn-icon svg {
+    width:  24px;
+    height: 24px;
+    pointer-events: none;
+}
+
+/* Wishlist-Toggle: gefülltes Herz wenn aktiv */
+.btn-icon--wishlist.is-active svg {
+    fill: var(--color-black);
+}
+
+
+/* ----------------------------------------------------------
+   ICON BUTTON PRIMARY — Blau  |  Mini "In den Warenkorb"
+   ---------------------------------------------------------- */
+
+.btn-icon--primary {
+    background-color: var(--color-blue);
+    color:            var(--color-white);
+    width:  52px;
+    height: 52px;
+}
+
+.btn-icon--primary:hover {
+    background-color: #004A8C;
+}
+
+.btn-icon--primary:active {
+    background-color: #003F7A;
+    transform: scale(0.90);
+}
+
+.btn-icon--primary svg {
+    width:  26px;
+    height: 26px;
+}
+
+
+/* ----------------------------------------------------------
+   FLOATING ACTION BUTTON — Gelb  |  Chat-Bubble
+   ---------------------------------------------------------- */
+
+.btn-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:  56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    border: none;
+    background-color: var(--color-yellow);
+    color:   var(--color-black);
+    cursor:  pointer;
+    box-shadow: var(--shadow-lg);
+    transition:
+        background-color var(--transition-fast),
+        box-shadow       var(--transition-fast),
+        transform        var(--transition-fast);
+}
+
+.btn-fab:hover {
+    background-color: #F0CC00;
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-fab:active {
+    background-color: #E6C200;
+    box-shadow: var(--shadow-md);
+    transform: scale(0.92);
+}
+
+.btn-fab svg {
+    width:  26px;
+    height: 26px;
+    pointer-events: none;
+}
+
+.fab-wrapper {
+    position: fixed;
+    bottom: 24px;
+    right:  24px;
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--sp-2);
+}
+
+
+/* ----------------------------------------------------------
+   QUANTITY STEPPER — "− 1 +"
+   ---------------------------------------------------------- */
+
+.qty-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    height: 52px;
+    min-width: 120px;
+    user-select: none;
+}
+
+.qty-stepper__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width:  44px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: var(--fz-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    flex-shrink: 0;
+    isolation: isolate;
+    transition: transform var(--transition-fast);
+}
+
+.qty-stepper__btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color var(--transition-fast);
+    z-index: -1;
+}
+
+.qty-stepper__btn:hover::before {
+    background-color: var(--color-gray-200);
+}
+
+.qty-stepper__btn:disabled {
+    color: var(--color-gray-300);
+    cursor: default;
+    pointer-events: none;
+}
+
+.qty-stepper__btn:active {
+    transform: scale(0.88);
+}
+
+.qty-stepper__btn:active::before {
+    background-color: var(--color-gray-300);
+}
+
+.qty-stepper__value {
+    flex: 1;
+    text-align: center;
+    font-size: var(--fz-base);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    pointer-events: none;
+}
+
+/* Stepper + CTA nebeneinander */
+.add-to-cart-row {
+    display: flex;
+    align-items: stretch;
+    gap: var(--sp-2);
+}
+
+.add-to-cart-row .btn--primary {
+    flex: 1;
+}
+
+
+/* ----------------------------------------------------------
+   SIZE SELECTOR — Größen-Chips
+   ---------------------------------------------------------- */
+
+.size-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.size-selector__label {
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+}
+
+.size-selector__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.size-option {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    cursor: pointer;
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-regular);
+    color: var(--color-text);
+    line-height: 1.3;
+    text-align: center;
+    min-width: 90px;
+    transition:
+        border-color     var(--transition-fast),
+        background-color var(--transition-fast),
+        transform        var(--transition-fast);
+}
+
+.size-option:hover {
+    border-color: var(--color-black);
+    background-color: var(--color-gray-100);
+}
+
+.size-option:active {
+    transform: scale(0.96);
+}
+
+.size-option--selected {
+    border: 2px solid var(--color-black);
+    font-weight: var(--fw-bold);
+}
+
+.size-option__surcharge {
+    font-size: var(--fz-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--fw-regular);
+    margin-top: 2px;
+}
+
+
+/* ----------------------------------------------------------
+   CHAT MODAL — "Willkommen bei IKEA Chat!"
+   ---------------------------------------------------------- */
+
+.chat-modal {
+    position: fixed;
+    bottom: 92px;
+    right: 24px;
+    width: 360px;
+    max-width: calc(100vw - 48px);
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    z-index: var(--z-modal);
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+    pointer-events: none;
+    transition:
+        opacity   var(--transition-base),
+        transform var(--transition-base);
+}
+
+.chat-modal--open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.chat-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px var(--sp-3);
+    background-color: var(--color-yellow);
+}
+
+.chat-modal__title {
+    font-size: var(--fz-base);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+}
+
+.chat-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:  32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-black);
+    transition: background-color var(--transition-fast);
+}
+
+.chat-modal__close:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.chat-modal__body {
+    padding: var(--sp-3);
+    font-size: var(--fz-sm);
+    line-height: var(--lh-base);
+    color: var(--color-text);
+    min-height: 100px;
+}
+
+.chat-modal__body a {
+    color: var(--color-blue);
+    text-decoration: underline;
+}
+
+.chat-modal__footer {
+    padding: var(--sp-1) var(--sp-3) var(--sp-3);
+}
+
+
+/* ----------------------------------------------------------
+   STARS — Sternebewertung (wiederverwendbar)
+   .stars enthält 5 .star Elemente.
+   Varianten: .star--full (default)  .star--half  .star--empty
+   Farben: schwarz/grau — kein Gelb
+   ---------------------------------------------------------- */
+
+.stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.star {
+    width:  16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.star svg {
+    width:  100%;
+    height: 100%;
+}
+
+/* Gefüllter Stern (Standard): schwarz */
+.star svg,
+.star svg use {
+    fill: var(--color-black);
+}
+
+/* Leerer Stern: hellgrau */
+.star--empty svg,
+.star--empty svg use {
+    fill: var(--color-gray-300);
+}
+
+/* Halb-Stern: fill kommt vom SVG linearGradient (url-Referenz) */
+.star--half svg use {
+    fill: url(#half-star-grad);
+}
+
+/* Kleine Variante in den Karten */
+.stars--sm .star {
+    width:  14px;
+    height: 14px;
+}
+
+/* Große Variante im Stat-Block */
+.stars--lg .star {
+    width:  20px;
+    height: 20px;
+}
+
+.stars__count {
+    margin-left: 6px;
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    line-height: 1;
+}
+
+
+/* ----------------------------------------------------------
+   REVIEW CARD — Einzelne Bewertungskarte
+   ---------------------------------------------------------- */
+
+.review-card {
+    flex: 0 0 240px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 220px;
+}
+
+.review-card__title {
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    line-height: var(--lh-tight);
+}
+
+.review-card__body {
+    font-size: var(--fz-sm);
+    color: rgb(var(--colour-text-and-icon-2));
+    line-height: var(--lh-base);
+    flex: 1;
+}
+
+.review-card__author {
+    font-size: var(--fz-xs);
+    color: var(--color-blue);
+    margin-top: auto;
+}
+
+
+/* ----------------------------------------------------------
+   REVIEWS MODULE — Kundenbewertungen
+   Zwei Panels nebeneinander: grau (Slider) | weiß (Stats)
+   Kein border-radius auf dem äußeren Element.
+   ---------------------------------------------------------- */
+
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    /* Kein background, kein border-radius, kein padding */
+}
+
+/* Gemeinsame Panel-Basis */
+.reviews__panel {
+    padding: var(--sp-4);
+}
+
+/* Linkes Panel: grau — Heading + Slider */
+.reviews__panel--left {
+    background-color: var(--color-bg-alt);
+    min-width: 0;
+}
+
+/* Rechtes Panel: weiß — Stats + Button */
+.reviews__panel--right {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: flex-start;
+    padding-left: var(--sp-6);
+}
+
+.reviews__heading {
+    font-size: var(--fz-2xl);
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    margin-bottom: var(--sp-3);
+}
+
+/* Slider-Spalte innerhalb des linken Panels */
+.reviews__slider-col {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    position: relative;
+}
+
+.reviews__track {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+    /* Kein scroll-snap — Drag soll linear laufen, Buttons scrollen smooth per JS */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+
+.reviews__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Custom Scrollbar-Leiste — direkt unter den Karten */
+.reviews__scrollbar-track {
+    height: 4px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-full);
+    position: relative;
+    overflow: visible;   /* Thumb darf über den Track hinauswachsen */
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.reviews__scrollbar-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    background-color: var(--color-black);
+    border-radius: var(--radius-full);
+    cursor: grab;
+    transition: height var(--transition-fast);
+    user-select: none;
+    touch-action: none;
+}
+
+.reviews__scrollbar-thumb:hover {
+    height: 6px;
+}
+
+.reviews__scrollbar-thumb.is-dragging {
+    height: 8px;
+    cursor: grabbing;
+}
+
+/* Pfeil-Buttons (sichtbar beim Hover/Drag) */
+.reviews__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    right: -16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.reviews__slider-col:hover .reviews__nav {
+    opacity: 1;
+}
+
+.reviews__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:  40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: var(--shadow-md);
+    transition:
+        background-color var(--transition-fast),
+        transform        var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.reviews__nav-btn:hover {
+    background-color: var(--color-gray-700);
+}
+
+
+.reviews__nav-btn:active {
+    transform: scale(0.91);
+}
+
+.reviews__nav-btn svg {
+    width:  18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.reviews__nav-btn.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Stat-Spalte innerhalb des rechten Panels */
+.reviews__stat-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    min-width: 180px;
+}
+
+.reviews__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.reviews__stat-value {
+    font-size: var(--fz-4xl);
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    line-height: 1;
+    letter-spacing: var(--ls-tight);
+}
+
+.reviews__stat-label {
+    font-size: var(--fz-sm);
+    color: var(--color-text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile-First Overrides
+   480px  → sm   (großes Phone)
+   768px  → md   (Tablet)
+   1024px → lg   (Desktop)
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   ADD-TO-CART ROW
+   Unter 480px: Stepper und Button stacken
+   ---------------------------------------------------------- */
+@media (max-width: 479px) {
+    .add-to-cart-row {
+        flex-direction: column;
+    }
+
+    .add-to-cart-row .qty-stepper {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .add-to-cart-row .btn--primary {
+        width: 100%;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   SIZE SELECTOR
+   Chips nehmen auf kleinen Screens mehr Breite
+   ---------------------------------------------------------- */
+@media (max-width: 479px) {
+    .size-option {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   REVIEWS — Mobile (< 768px)
+   Panels stacken, Stat-Col horizontal, Nav versteckt
+   ---------------------------------------------------------- */
+@media (max-width: 767px) {
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews__panel--right {
+        padding-left: var(--sp-4);
+        /* Abstand zur Karten-Sektion darüber: Zusammenfassung soll nicht
+           direkt an den Bewertungen kleben */
+        padding-top: var(--sp-5);
+    }
+
+    /* Auf Touch scrollen Nutzer direkt — Buttons unnötig */
+    .reviews__nav {
+        display: none;
+    }
+
+    /* Stats nebeneinander in zwei Mini-Blöcken */
+    .reviews__stat-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: var(--sp-4);
+    }
+
+    .reviews__stat-value {
+        font-size: var(--fz-3xl);  /* 36px statt 48px */
+    }
+
+    /* Button voll breit unter den Zahlen */
+    .reviews__stat-col .btn--outline {
+        width: 100%;
+        flex-basis: 100%;
+    }
+}
+
+/* Reviews — Tablet (768px–1023px): etwas weniger Breite fürs Panel */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .reviews__panel--right {
+        padding-left: var(--sp-4);
+        min-width: 160px;
+    }
+
+    .reviews__stat-value {
+        font-size: var(--fz-3xl);
+    }
+}
+
+
+/* ----------------------------------------------------------
+   FAB + CHAT MODAL — Mobile
+   ---------------------------------------------------------- */
+@media (max-width: 479px) {
+    .fab-wrapper {
+        bottom: 16px;
+        right:  16px;
+    }
+
+    /* Modal: volle Breite mit kleinem Rand */
+    .chat-modal {
+        right:   12px;
+        left:    12px;
+        bottom:  84px;
+        width:   auto;
+        max-width: none;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   BUTTONS — volle Breite auf kleinen Screens (opt-in)
+   Klasse .btn--full-mobile hinzufügen
+   ---------------------------------------------------------- */
+@media (max-width: 479px) {
+    .btn--full-mobile {
+        width: 100%;
+    }
+}
+
+
+/* ============================================================
+   INSTAGRAM DISCOVER FEED — "Entdeckt bei euch zu Hause"
+   ============================================================ */
+
+.insta-feed {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+}
+
+.insta-feed__title {
+    font-size: var(--fz-xl);
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    line-height: var(--lh-tight);
+}
+
+.insta-feed__subtitle {
+    font-size: var(--fz-sm);
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.insta-feed__slider-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.insta-feed__slider-wrapper {
+    position: relative;
+}
+
+/* Nav-Pfeile — identisches Verhalten wie reviews */
+.insta-feed__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:  -20px;
+    right: -20px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: var(--z-above);
+}
+
+.insta-feed__slider-wrapper:hover .insta-feed__nav {
+    opacity: 1;
+}
+
+/* Nav-Buttons teilen sich die styles der .reviews__nav-btn */
+.insta-feed__nav .reviews__nav-btn.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Bildstreifen */
+.insta-feed__track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.insta-feed__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Einzelne Bild-Karte — Portrait 3:4 */
+.insta-card {
+    flex: 0 0 320px;
+    height: 427px;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: var(--color-img-bg);
+    transition: transform var(--transition-fast);
+}
+
+.insta-card:active {
+    transform: scale(0.98);
+}
+
+.insta-card__img {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Instagram-Badge — oben links, Kreis → Pill on hover */
+.insta-card__ig-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 28px;
+    max-width: 28px;
+    padding: 0 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    transition: max-width var(--transition-slow), padding var(--transition-slow);
+    pointer-events: none;
+}
+
+.insta-card__ig-badge svg {
+    width:  16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--color-black);
+}
+
+.insta-card__ig-name {
+    font-size: 11px;
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    line-height: 1;
+}
+
+.insta-card:hover .insta-card__ig-badge {
+    max-width: 160px;
+    padding: 0 10px 0 7px;
+}
+
+/* Produkt-Anzahl-Badge — unten links, weißes Pill */
+.insta-card__count {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: var(--radius-full);
+    padding: 4px 8px 4px 6px;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.insta-card__count svg {
+    width:  12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* Scrollbar — gleiche Styles wie reviews */
+.insta-feed__scrollbar-track {
+    height: 4px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-full);
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.insta-feed__scrollbar-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    background-color: var(--color-black);
+    border-radius: var(--radius-full);
+    cursor: grab;
+    transition: height var(--transition-fast);
+    user-select: none;
+    touch-action: none;
+}
+
+.insta-feed__scrollbar-thumb:hover      { height: 6px; }
+.insta-feed__scrollbar-thumb.is-dragging { height: 8px; cursor: grabbing; }
+
+
+/* ============================================================
+   INSTAGRAM MODAL — Produkt-Detail beim Klick
+   ============================================================ */
+
+.insta-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+}
+
+.insta-modal--open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.insta-modal__panel {
+    background: var(--color-white);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 1000px;
+    height: 82vh;
+    max-height: 640px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.96) translateY(8px);
+    transition: transform var(--transition-base);
+}
+
+.insta-modal--open .insta-modal__panel {
+    transform: scale(1) translateY(0);
+}
+
+/* Volle Breite: Header mit Titel + Schließen */
+.insta-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 8px 14px 20px;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.insta-modal__title {
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    line-height: var(--lh-tight);
+}
+
+.insta-modal__close {
+    flex-shrink: 0;
+}
+
+/* Zweispaltiger Body */
+.insta-modal__body {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Linke Seite: weißer Rahmen um das Bild */
+.insta-modal__image-col {
+    background: var(--color-white);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Bild-Wrapper: füllt den gepaddeten Innenraum, enthält Badge */
+.insta-modal__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.insta-modal__img {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Instagram-Handle-Pill — relativ zum Bild-Wrapper */
+.insta-modal__handle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--fz-xs);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: var(--radius-full);
+    padding: 5px 10px 5px 7px;
+}
+
+.insta-modal__handle svg {
+    width:  14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Rechte Seite: Produktliste */
+.insta-modal__products-col {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-left: 1px solid var(--color-border);
+}
+
+/* Einzelnes Produkt */
+.insta-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.insta-product:last-child {
+    border-bottom: none;
+}
+
+.insta-product__thumb {
+    width:  64px;
+    height: 64px;
+    flex-shrink: 0;
+    background: var(--color-img-bg);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.insta-product__thumb img {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.insta-product__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.insta-product__badge {
+    font-size: var(--fz-xs);
+    font-weight: var(--fw-bold);
+    color: rgb(var(--colour-commercial-message-new-lower-price));
+}
+
+.insta-product__name {
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.insta-product__desc {
+    font-size: var(--fz-xs);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    margin-top: 1px;
+}
+
+.insta-product__price {
+    font-size: var(--fz-md);
+    font-weight: var(--fw-black);
+    color: var(--color-text);
+    line-height: 1;
+    margin-top: 6px;
+    white-space: nowrap;
+}
+
+.insta-product__price sup {
+    font-size: 9px;
+    font-weight: var(--fw-bold);
+    vertical-align: top;
+    line-height: 1.4;
+}
+
+.insta-product__price-old {
+    font-size: var(--fz-xs);
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+    margin-top: 2px;
+}
+
+.insta-product__actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+    .insta-feed__nav { display: none; }
+
+    .insta-modal__panel {
+        height: auto;
+        max-height: 92vh;
+    }
+
+    .insta-modal__body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .insta-modal__image-col {
+        min-height: 220px;
+        max-height: 40vh;
+    }
+
+    .insta-card {
+        flex: 0 0 160px;
+        height: 213px;
+    }
+}

@@ -1,0 +1,273 @@
+/* ============================================================
+   TOKENS — SERVÅR Design System
+   Alle Design-Entscheidungen an einem Ort.
+   Niemals direkte Farbwerte außerhalb dieser Datei verwenden.
+   ============================================================ */
+
+:root {
+
+    /* ----------------------------------------------------------
+       IKEA ORIGINAL COLOR VARIABLES
+       RGB-Triplets (ohne rgb()) — Verwendung:
+         color: rgb(var(--colour-neutral-7));
+         background: rgba(var(--colour-neutral-7), 0.08);
+       ---------------------------------------------------------- */
+
+    /* Neutral */
+    --colour-neutral-1:  255, 255, 255;
+    --colour-neutral-2:  245, 245, 245;
+    --colour-neutral-3:  223, 223, 223;
+    --colour-neutral-4:  204, 204, 204;
+    --colour-neutral-5:  146, 146, 146;
+    --colour-neutral-6:   72,  72,  72;
+    --colour-neutral-7:   17,  17,  17;
+
+    /* Text & Icon */
+    --colour-text-and-icon-1:  17,  17,  17;   /* primärer Text */
+    --colour-text-and-icon-2:  72,  72,  72;   /* sekundärer Text */
+    --colour-text-and-icon-3: 118, 118, 118;   /* gedämpft */
+    --colour-text-and-icon-4: 146, 146, 146;   /* Platzhalter */
+    --colour-text-and-icon-5: 255, 255, 255;   /* auf dunklem BG */
+
+    /* Elevation */
+    --colour-elevation-1:         255, 255, 255;
+    --colour-elevation-2:         255, 255, 255;
+    --colour-elevation-3:          17,  17,  17;
+    --colour-elevation-1-border:  223, 223, 223;
+    --colour-elevation-2-border:   72,  72,  72;
+
+    /* Semantisch */
+    --colour-semantic-informative:   0,  88, 163;
+    --colour-semantic-positive:     10, 138,   0;
+    --colour-semantic-caution:     242, 106,  47;
+    --colour-semantic-caution-text:202,  80,   8;
+    --colour-semantic-negative:    224,   7,  81;
+
+    /* Static Brand */
+    --colour-static-white:           255, 255, 255;
+    --colour-static-light-grey:      245, 245, 245;
+    --colour-static-grey:            223, 223, 223;
+    --colour-static-dark-grey:       118, 118, 118;
+    --colour-static-black:            17,  17,  17;
+    --colour-static-ikea-brand-blue:   0,  88, 163;
+    --colour-static-ikea-brand-yellow:255, 219,   0;
+    --colour-static-ikea-family:       0, 124, 193;
+    --colour-static-ikea-business-network: 222, 188, 156;
+
+    /* Commercial */
+    --colour-commercial-message-new:               202,  80,   8;
+    --colour-commercial-message-new-lower-price:   204,   0,   8;
+    --colour-commercial-message-time-restricted:   204,   0,   8;
+    --colour-commercial-message-ikea-family:         0, 124, 193;
+    --colour-commercial-message-bti-yellow:        255, 219,   0;
+    --colour-commercial-message-bti-red:           204,   0,   8;
+    --colour-campaign-sustainability:               55, 184, 134;
+
+    /* Interactive — Primary (schwarz, "Chat starten") */
+    --colour-interactive-primary-bg-default:  17,  17,  17;
+    --colour-interactive-primary-bg-hover:    51,  51,  51;
+    --colour-interactive-primary-bg-pressed:   0,   0,   0;
+
+    /* Interactive — Secondary (hellgrau) */
+    --colour-interactive-secondary-bg-default:  245, 245, 245;
+    --colour-interactive-secondary-bg-hover:    223, 223, 223;
+    --colour-interactive-secondary-bg-pressed:  204, 204, 204;
+
+    /* Interactive — Subtle (outline / ghost) */
+    --colour-interactive-subtle-bg-default:     255, 255, 255;
+    --colour-interactive-subtle-bg-hover:       245, 245, 245;
+    --colour-interactive-subtle-bg-pressed:     223, 223, 223;
+    --colour-interactive-subtle-border-default: 146, 146, 146;
+    --colour-interactive-subtle-border-hover:    17,  17,  17;
+    --colour-interactive-subtle-border-pressed:  17,  17,  17;
+    --colour-interactive-subtle-border-selected: 17,  17,  17;
+
+    /* Interactive — Emphasised (blau, "In den Warenkorb") */
+    --colour-interactive-emphasised-bg-default:   0,  88, 163;
+    --colour-interactive-emphasised-bg-hover:     0,  79, 147;
+    --colour-interactive-emphasised-bg-pressed:   0,  62, 114;
+    --colour-interactive-emphasised-border-selected: 0, 88, 163;
+
+    /* Interactive — Destructive */
+    --colour-interactive-destructive-bg-default: 224,   7,  81;
+    --colour-interactive-destructive-bg-hover:   204,   0,  61;
+    --colour-interactive-destructive-bg-pressed: 184,   0,  41;
+
+    /* Interactive — Disabled */
+    --colour-interactive-disabled-1: 204, 204, 204;
+    --colour-interactive-disabled-2: 146, 146, 146;
+    --colour-interactive-disabled-3: 255, 255, 255;
+
+    /* Extended Palette */
+    --colour-extended-palette-01: 193, 207, 212;
+    --colour-extended-palette-02: 163, 172, 176;
+    --colour-extended-palette-03: 140, 221, 255;
+    --colour-extended-palette-04:   0, 150, 210;
+    --colour-extended-palette-05:   0,  89, 128;
+    --colour-extended-palette-06: 217, 171, 255;
+    --colour-extended-palette-07: 107,  61, 153;
+    --colour-extended-palette-08: 255, 166, 218;
+    --colour-extended-palette-09: 229,  47, 126;
+    --colour-extended-palette-10: 255, 174, 102;
+    --colour-extended-palette-11: 255, 170,   0;
+    --colour-extended-palette-12: 242, 106,  47;
+    --colour-extended-palette-13: 204, 177,   0;
+    --colour-extended-palette-14: 199, 217,   0;
+    --colour-extended-palette-15: 122, 181,  29;
+    --colour-extended-palette-16:  80, 128,  32;
+    --colour-extended-palette-17: 149, 229, 187;
+    --colour-extended-palette-18:   0, 153, 133;
+    --colour-extended-palette-19:   0, 102,  88;
+    --colour-extended-palette-20: 215, 199, 162;
+    --colour-extended-palette-21: 195, 178, 137;
+
+
+    /* ----------------------------------------------------------
+       SERVÅR SEMANTISCHE TOKENS
+       Bauen auf den IKEA-Vars auf. Alle Komponenten nutzen diese.
+       ---------------------------------------------------------- */
+
+    /* Brand */
+    --color-blue:      rgb(var(--colour-static-ikea-brand-blue));    /* 0,88,163   */
+    --color-yellow:    rgb(var(--colour-static-ikea-brand-yellow));   /* 255,219,0  */
+    --color-dark-blue: #003F7A;   /* Footer-Bottom — kein direktes IKEA-Äquivalent */
+
+    /* Neutral */
+    --color-black:   rgb(var(--colour-neutral-7));   /* 17,17,17  */
+    --color-white:   rgb(var(--colour-neutral-1));   /* 255,255,255 */
+
+    --color-gray-100: rgb(var(--colour-neutral-2));  /* 245,245,245 */
+    --color-gray-200: rgb(var(--colour-neutral-3));  /* 223,223,223 */
+    --color-gray-300: rgb(var(--colour-neutral-4));  /* 204,204,204 */
+    --color-gray-500: rgb(var(--colour-neutral-5));  /* 146,146,146 */
+    --color-gray-600: rgb(var(--colour-neutral-6));  /* 72,72,72    */
+    --color-gray-700: rgb(var(--colour-interactive-primary-bg-hover)); /* 51,51,51 */
+
+    /* Text */
+    --color-text:       rgb(var(--colour-text-and-icon-1));  /* 17,17,17  */
+    --color-text-muted: rgb(var(--colour-text-and-icon-2));  /* 72,72,72  */
+    --color-text-faint: rgb(var(--colour-text-and-icon-3));  /* 118,118,118 */
+
+    /* Hintergründe */
+    --color-bg:      rgb(var(--colour-elevation-1));    /* 255,255,255 */
+    --color-bg-alt:  rgb(var(--colour-neutral-2));      /* 245,245,245 */
+
+    /* Rahmen */
+    --color-border:  rgb(var(--colour-elevation-1-border));  /* 223,223,223 */
+
+    /* Sonstige */
+    --color-img-bg:  #F0F4F8;
+    --color-success: rgb(var(--colour-semantic-positive));   /* 10,138,0   */
+
+    /* Interactive — Aliase für Buttons (referenziert IKEA-Vars direkt) */
+    --color-btn-primary-bg:       rgb(var(--colour-interactive-emphasised-bg-default));
+    --color-btn-primary-bg-hover: rgb(var(--colour-interactive-emphasised-bg-hover));
+    --color-btn-primary-bg-press: rgb(var(--colour-interactive-emphasised-bg-pressed));
+
+    --color-btn-dark-bg:          rgb(var(--colour-interactive-primary-bg-default));
+    --color-btn-dark-bg-hover:    rgb(var(--colour-interactive-primary-bg-hover));
+    --color-btn-dark-bg-press:    rgb(var(--colour-interactive-primary-bg-pressed));
+
+    --color-btn-outline-border:       rgb(var(--colour-interactive-subtle-border-default));
+    --color-btn-outline-border-hover: rgb(var(--colour-interactive-subtle-border-hover));
+    --color-btn-subtle-bg-hover:      rgb(var(--colour-interactive-subtle-bg-hover));
+    --color-btn-subtle-bg-press:      rgb(var(--colour-interactive-subtle-bg-pressed));
+
+
+    /* ----------------------------------------------------------
+       TYPOGRAFIE
+       ---------------------------------------------------------- */
+
+    --font-family:  'Noto Sans', sans-serif;
+
+    --fz-xs:   12px;
+    --fz-sm:   13px;
+    --fz-base: 16px;
+    --fz-md:   18px;
+    --fz-lg:   20px;
+    --fz-xl:   24px;
+    --fz-2xl:  28px;
+    --fz-3xl:  36px;
+    --fz-4xl:  48px;
+    --fz-5xl:  64px;
+
+    --fw-regular: 400;
+    --fw-bold:    700;
+    --fw-black:   900;
+
+    --lh-tight: 1.2;
+    --lh-base:  1.6;
+    --lh-loose: 1.8;
+
+    --ls-tight: -0.01em;
+    --ls-base:   0;
+    --ls-wide:   0.05em;
+    --ls-wider:  0.1em;
+
+
+    /* ----------------------------------------------------------
+       ABSTÄNDE
+       ---------------------------------------------------------- */
+
+    --sp-1:   8px;
+    --sp-2:  16px;
+    --sp-3:  24px;
+    --sp-4:  32px;
+    --sp-5:  40px;
+    --sp-6:  48px;
+    --sp-8:  64px;
+    --sp-10: 80px;
+    --sp-12: 96px;
+    --sp-16:128px;
+
+
+    /* ----------------------------------------------------------
+       LAYOUT
+       ---------------------------------------------------------- */
+
+    --container-max: 1200px;
+    --container-pad:   24px;
+
+    --grid-gap-sm: 16px;
+    --grid-gap-md: 24px;
+    --grid-gap-lg: 40px;
+
+
+    /* ----------------------------------------------------------
+       EFFEKTE
+       ---------------------------------------------------------- */
+
+    --shadow-sm:  0 1px  4px rgba(var(--colour-neutral-7), 0.06);
+    --shadow-md:  0 2px 12px rgba(var(--colour-neutral-7), 0.08);
+    --shadow-lg:  0 6px 24px rgba(var(--colour-neutral-7), 0.12);
+    --shadow-xl:  0 12px 40px rgba(var(--colour-neutral-7), 0.16);
+
+    --radius-sm:   2px;
+    --radius-md:   4px;
+    --radius-full: 999px;
+
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 350ms ease;
+
+    --z-base:    0;
+    --z-above:  10;
+    --z-sticky: 100;
+    --z-modal:  200;
+    --z-toast:  300;
+
+}
+
+
+/* ----------------------------------------------------------
+   BREAKPOINTS (Referenz)
+
+   --bp-sm:   480px
+   --bp-md:   768px
+   --bp-lg:  1024px
+   --bp-xl:  1280px
+
+   @media (min-width: 768px)  { }   Tablet
+   @media (min-width: 1024px) { }   Desktop
+   @media (min-width: 1280px) { }   Wide
+   ---------------------------------------------------------- */
