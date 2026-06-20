@@ -159,6 +159,14 @@
     color:            var(--color-white)   !important;
 }
 
+/* Erfolgs-Bestätigung ist KEIN ausgegrauter Zustand: volle Deckkraft trotz
+   disabled-Attribut (disabled blockiert via pointer-events weiter Doppelklicks). */
+.btn--success:disabled,
+.btn--success[aria-disabled="true"] {
+    opacity: 1;
+    cursor: default;
+}
+
 
 /* ----------------------------------------------------------
    ICON BUTTON — Rund, kein Bg  |  Wishlist-Herz
