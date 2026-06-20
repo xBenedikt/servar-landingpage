@@ -119,10 +119,21 @@ body.theme-mork {
     .theme-mork .hero__scrim {
         background: linear-gradient(180deg,
             rgba(12, 14, 18, 0.96) 0%,
-            rgba(12, 14, 18, 0.86) 18%,
-            rgba(12, 14, 18, 0.4) 42%,
-            rgba(12, 14, 18, 0.18) 62%,
+            rgba(12, 14, 18, 0.9) 30%,
+            rgba(12, 14, 18, 0.74) 50%,
+            rgba(12, 14, 18, 0.26) 66%,
+            rgba(12, 14, 18, 0.12) 77%,
             rgba(12, 14, 18, 0.66) 100%);
+    }
+    /* Dunkler Halo für die helle Mörk-Schrift über Video (Hero) und Canvas
+       (Aufbau-Titel) — verbessert die Lesbarkeit ohne das Video abzudunkeln. */
+    .theme-mork .hero__title,
+    .theme-mork .hero__sub,
+    .theme-mork .hero__lede,
+    .theme-mork .assembly__intro .assembly__eyebrow,
+    .theme-mork .assembly__intro .assembly__title {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6),
+                     0 2px 16px rgba(0, 0, 0, 0.45);
     }
 }
 
