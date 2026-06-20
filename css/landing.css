@@ -1369,6 +1369,7 @@ section[id] {
 .assembly__step.is-active .assembly__step-num { color: var(--color-blue); }
 
 .assembly__step-title {
+    display: block;
     font-size: var(--fz-md);
     font-weight: var(--fw-bold);
     line-height: 1.25;
@@ -1376,6 +1377,7 @@ section[id] {
 }
 
 .assembly__step-text {
+    display: block;
     font-size: var(--fz-sm);
     color: var(--color-text-muted);
     line-height: var(--lh-base);
