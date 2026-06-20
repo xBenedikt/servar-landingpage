@@ -74,7 +74,7 @@ body.theme-mork {
     /* Token-Overrides (kaskadieren in die ganze Seite) */
     --color-text:        #eef1f5;
     --color-text-muted:  #a7aeb8;
-    --color-text-faint:  #6e757f;
+    --color-text-faint:  #868d99;   /* angehoben: erreicht WCAG AA auf #0e1014 */
     --color-border:      rgba(255, 255, 255, 0.12);
     --color-blue:        #4da3ff;   /* kühler Akzent / „Leuchtring" */
     --color-bg-alt:      #16191f;   /* abgesetzte Flächen (Feature/Modul/Reviews) */
@@ -83,15 +83,21 @@ body.theme-mork {
     color: #eef1f5;
 }
 
-/* Marken-Pill: dunkler Text auf Gelb (sonst zu wenig Kontrast) */
-.theme-mork .brand { color: #0e1014; }
+/* Marken-Logo bleibt in ALLEN Editionen IKEA-Blau auf Gelb — die
+   Markenfarbe wird nicht vom Edition-Akzent (--color-blue) überschrieben.
+   Greift auf das statische Marken-Token zu, das die Themes nicht antasten. */
+.theme-mork .brand,
+.theme-nomad .brand { color: rgb(var(--colour-static-ikea-brand-blue)); }
 
 /* Header dunkel + Glas-Effekt */
 .theme-mork .site-header { background-color: rgba(14, 16, 20, 0.82); }
 .theme-mork .site-header.is-scrolled { border-bottom-color: var(--color-border); }
 
-/* Mobiles Burger-Panel dunkel (sonst helle Fläche + heller Text) */
-.theme-mork .site-nav { background-color: #14171c; }
+/* Burger-Panel dunkel — NUR wo .site-nav ein Dropdown-Panel ist (≤1023).
+   Die Desktop-Inline-Nav bleibt transparent über dem Header-Glas. */
+@media (max-width: 1023px) {
+    .theme-mork .site-nav { background-color: #14171c; }
+}
 
 /* Hero dunkel + Video abdunkeln */
 .theme-mork .hero { background-color: #0c0e12; }
@@ -139,26 +145,102 @@ body.theme-mork {
     background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.2px, transparent 1.2px);
 }
 .theme-mork .assembly__step { border-color: var(--color-border); }
+/* Inaktive Schritt-Nummern: Basis ist dunkles rgba(17,17,17,0.4) → auf
+   Dunkel unsichtbar. Auf helles, dezentes Weiß umstellen (aktiv bleibt blau). */
+.theme-mork .assembly__step-num { color: rgba(255, 255, 255, 0.5); }
 @media (max-width: 1023px) {
     /* aktive Schritt-Karte dunkel (sonst weiße Karte + heller Text) */
     .theme-mork .assembly__step { background-color: #16191f; }
 }
 
-/* Bilder einbetten (dezent abdunkeln, passt zur Dark-Bühne) */
+/* Noch helle, geteilte Bilder dezent abdunkeln, damit sie zur Dark-Bühne
+   passen. Der Canvas hat eine EIGENE dunkle Frame-Sequenz (frames-pro) und
+   wird NICHT mit abgedunkelt — sonst säuft die Aufbau-Animation ab. */
 .theme-mork .feature__media-img,
-.theme-mork .insta-card__img,
-.theme-mork .assembly__canvas { filter: brightness(0.86) contrast(1.04); }
+.theme-mork .insta-card__img { filter: brightness(0.86) contrast(1.04); }
 
 /* Modul-Sektion (Instagram) */
 .theme-mork .module-section--alt { background-color: #121419; }
 
-/* Reviews-Panels */
+/* Reviews / Kundenstimmen — Dark-Optimierung */
 .theme-mork .reviews__panel--left { background-color: #14171c; }
 .theme-mork .reviews__panel--right { background-color: #0e1014; }
 
-/* Outline-Button auf Dunkel lesbar */
-.theme-mork .btn--outline { color: var(--color-text); border-color: var(--color-border); }
-.theme-mork .btn--outline:hover { background-color: rgba(255, 255, 255, 0.06); }
+/* Karten dunkel statt weiß (sonst heller Text auf weißer Karte) */
+.theme-mork .review-card { background-color: #16191f; border-color: var(--color-border); }
+.theme-mork .review-card__body { color: var(--color-text-muted); }
+
+/* Sterne: gefüllt = Gold, leer = dezent hell (schwarz wäre unsichtbar) */
+.theme-mork .star svg,
+.theme-mork .star svg use { fill: var(--color-yellow); }
+.theme-mork .star--empty svg,
+.theme-mork .star--empty svg use { fill: rgba(255, 255, 255, 0.18); }
+/* Halb-Stern behält die Verlaufs-Füllung (sonst überschreibt ihn die Gold-Regel) */
+.theme-mork .star--half svg use { fill: url(#half-star-grad); }
+/* Halb-Stern-Verlauf (inline-SVG) dark-tauglich umfärben */
+.theme-mork #half-star-grad stop:first-child { stop-color: var(--color-yellow); }
+.theme-mork #half-star-grad stop:last-child  { stop-color: rgba(255, 255, 255, 0.20); }
+
+/* Custom-Scrollbars (Reviews UND Insta-Feed): Basis ist track=gray-200,
+   thumb=schwarz — auf Dunkel wirkt der helle Track wie ein Fremdkörper.
+   Heller, transluzenter Track + helles Thumb, einheitlich für beide Slider. */
+.theme-mork .reviews__scrollbar-track,
+.theme-mork .insta-feed__scrollbar-track { background-color: rgba(255, 255, 255, 0.12); }
+.theme-mork .reviews__scrollbar-thumb,
+.theme-mork .insta-feed__scrollbar-thumb { background-color: rgba(255, 255, 255, 0.55); }
+
+/* Slider-Pfeile (Reviews + Insta-Feed): schwarze Buttons (var(--color-black))
+   sind auf den dunklen Flächen kaum sichtbar → helle Fläche, dunkles Icon. */
+.theme-mork .reviews__nav-btn {
+    background-color: rgba(255, 255, 255, 0.92);
+    color: var(--color-black);
+}
+.theme-mork .reviews__nav-btn:hover { background-color: #ffffff; }
+
+/* Outline-Button: auf Dunkel transparent mit hellem Rand/Text
+   (Basis hat helle Subtle-BG + schwarzen Text → unbrauchbar auf dunkel) */
+.theme-mork .btn--outline {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: rgba(255, 255, 255, 0.40);
+}
+.theme-mork .btn--outline:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.70);
+}
+
+/* Ghost-Button (Login im Header): Basis hat schwarzen Text + hellen
+   Hover-BG → auf Dunkel unsichtbar. Hell einfärben, Hover dezent. */
+.theme-mork .btn--ghost { color: var(--color-text); }
+.theme-mork .btn--ghost:hover { background-color: rgba(255, 255, 255, 0.08); }
+.theme-mork .btn--ghost:active { background-color: rgba(255, 255, 255, 0.14); }
+
+/* Icon-Buttons (Warenkorb, Wishlist, Modal-Schließen): Basisfarbe ist
+   --color-black, die currentColor-Strokes sind auf Dunkel quasi unsichtbar.
+   Hell einfärben + Hover/Active dezent statt hellgrau. Primary (blaue
+   Fläche, weißes Icon) ist ausgenommen — die bleibt unverändert. */
+.theme-mork .btn-icon:not(.btn-icon--primary) { color: var(--color-text); }
+.theme-mork .btn-icon:not(.btn-icon--primary):hover { background-color: rgba(255, 255, 255, 0.08); }
+.theme-mork .btn-icon:not(.btn-icon--primary):active { background-color: rgba(255, 255, 255, 0.14); }
+/* Aktives Wishlist-Herz: gefülltes Schwarz → helles Icon auf Dunkel */
+.theme-mork .btn-icon--wishlist.is-active svg { fill: var(--color-text); }
+
+/* Primary-Icon-Button (Mini-„In den Warenkorb"): weißes Icon auf dem hellen
+   Akzent-Blau (#4da3ff) reißt 3:1. Fläche vertiefen → weißes Icon passt
+   wieder (Hover/Active sind ohnehin dunkler). */
+.theme-mork .btn-icon--primary { background-color: #1f7ae0; }
+
+/* Akzent-Blau (#4da3ff) ist HELL — als Fläche braucht es DUNKLEN Text,
+   sonst weiß-auf-hellblau (Kontrast nur ~2.6). Betrifft die aktive
+   Versions-Pille und die runde Schritt-Badge (Mobile). */
+.theme-mork .version-switch__link.is-active { color: #0e1014; }
+@media (max-width: 1023px) {
+    .theme-mork .assembly__step.is-active .assembly__step-num { color: #0e1014; }
+}
+
+/* „Neuer niedriger Preis"-Badge: Marken-Rot ist auf Dunkel zu dunkel —
+   aufgehellt für lesbaren Kontrast im Insta-Modal. */
+.theme-mork .insta-product__badge { color: #ff6b6b; }
 
 /* CTA-Band: tiefes Marine statt hellem Akzentblau */
 .theme-mork .cta-band { background-color: #101723; }
@@ -204,3 +286,11 @@ body.theme-nomad {
 
 /* Specs-Punktraster in Oliv-Ton */
 .theme-nomad .specs { background-image: radial-gradient(rgba(93, 107, 53, 0.07) 1.1px, transparent 1.1px); }
+
+/* Custom-Scrollbars (Reviews UND Insta-Feed): der kühlgraue Basis-Track
+   (gray-200) verschwindet fast auf dem warmen Sand-Hintergrund. Warmer,
+   sichtbarer Track + olivfarbenes Thumb statt Schwarz. */
+.theme-nomad .reviews__scrollbar-track,
+.theme-nomad .insta-feed__scrollbar-track { background-color: rgba(74, 61, 36, 0.16); }
+.theme-nomad .reviews__scrollbar-thumb,
+.theme-nomad .insta-feed__scrollbar-thumb { background-color: #4f5d2c; }

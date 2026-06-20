@@ -190,7 +190,9 @@ function initAssemblyScroll() {
     let   currentIdx = -1;
     let   lastP   = 0;
 
-    const framePath = n => `assets/server/frames/frame-${String(n).padStart(4, '0')}.webp`;
+    // Frame-Ordner pro Edition über data-frames am Canvas (Mörk = dunkle Sequenz)
+    const framesDir = canvas.dataset.frames || 'assets/server/frames';
+    const framePath = n => `${framesDir}/frame-${String(n).padStart(4, '0')}.webp`;
 
     function sizeFrom(img) {
         if (sized || !img.naturalWidth) return;

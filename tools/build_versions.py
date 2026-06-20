@@ -55,7 +55,7 @@ MORK = [
     ('<title>SERVÅR – Dein eigener Server. Ohne Cloud, ohne Abo.</title>',
      '<title>SERVÅR Mörk – Dark-Aluminium Home-Server für Pros</title>'),
     ('<meta name="description" content="SERVÅR – der Flat-Pack Home Server. Einmalpreis statt Cloud-Abo, deine Daten bleiben zu Hause. Aufbau wie ein Möbelstück, Inbusschlüssel liegt bei.">',
-     '<meta name="description" content="SERVÅR Mörk – die Pro-Edition: geräucherte Eiche, mattschwarzes Aluminium, 10-GbE-Speed und Stealth-LED. Für Gamer, Creator und IT-Enthusiasten.">'),
+     '<meta name="description" content="SERVÅR Mörk – die Pro-Edition: geräucherte Eiche, mattschwarzes Aluminium, 10-GbE-Speed und Offline-Backup. Für Creator, IT-Profis und Power-User.">'),
 
     # --- Hero ---
     ('<span class="hero__kicker-dot"></span>Flat-Pack Home Server',
@@ -64,19 +64,23 @@ MORK = [
      'Maximale Leistung.<br>Edles <strong>Dark Design.</strong>'),
     ('Schluss mit Cloud-Abos und fremden Rechenzentren. SERVÅR steht bei dir zu Hause –',
      'Geräucherte Eiche, mattschwarzes Aluminium und 10-GbE-Speed –'),
-    ('deine Daten auch.', 'lüfterlos, flüsterleise, kompromisslos.'),
+    ('deine Daten auch.', 'edel, leise, kompromisslos.'),
     ('class="btn btn--yellow btn--lg">Jetzt entdecken</a>',
      'class="btn btn--yellow btn--lg">Pro entdecken</a>'),
     # Art-Nr. (überall: Hero-Meta, Footer, Specs)
     ('503.847.62', '503.847.63'),
+    # Hero-Medien: dunkles Pro-Video + Poster (Poster trifft auch den LCP-Preload im <head>)
+    ('assets/hero/servar-hero-poster.webp', 'assets/hero/servar-hero-pro-poster.webp'),
+    ('assets/hero/servar-hero.webm', 'assets/hero/servar-hero-pro.webm'),
+    ('assets/hero/servar-hero.mp4', 'assets/hero/servar-hero-pro.mp4'),
 
     # --- Marquee ---
     (mq('Kein Abo'),         mq('10 Gbit/s')),
     (mq('Deine Daten'),      mq('Geräucherte Eiche')),
     (mq('Kein Cloud-Zwang'), mq('Mattes Aluminium')),
-    (mq('Offline-Zugriff'),  mq('RGB-Statusring')),
-    (mq('Open Source'),      mq('Lüfterlos')),
-    (mq('Werkzeug liegt bei'), mq('Stealth-Modus')),
+    (mq('Offline-Zugriff'),  mq('Weißer Statusring')),
+    (mq('Open Source'),      mq('Leise gekühlt')),
+    (mq('Werkzeug liegt bei'), mq('Offline-Backup')),
 
     # --- Trust ---
     ('<span class="trust__eyebrow">Warum SERVÅR?</span>',
@@ -92,23 +96,28 @@ MORK = [
     ('Fotos, Dokumente und Backups liegen auf deinem Gerät – nicht in fremden Rechenzentren.',
      'Geräucherte Eiche und eloxiertes Aluminium in Anthrazit – ein Objekt, das auf dem Schreibtisch bleiben darf.'),
     ('<span class="trust__item-title">Funktioniert offline</span>',
-     '<span class="trust__item-title">Stealth-Modus</span>'),
+     '<span class="trust__item-title">Offline-Backup</span>'),
     ('Voller Zugriff auf deine Daten – selbst wenn das Internet mal komplett weg ist.',
-     'Der Statusring leuchtet kühl-blau – oder verschwindet auf Knopfdruck komplett im Dunkeln.'),
+     'Voller Zugriff und automatische, verschlüsselte Backups – lokal auf dem Gerät, auch ganz ohne Internet.'),
     ('<span class="trust__item-title">Aufbau wie ein Möbelstück</span>',
-     '<span class="trust__item-title">Lüfterlos leise</span>'),
+     '<span class="trust__item-title">Leise gekühlt</span>'),
     ('Werkzeug liegt bei. Schritt für Schritt aufgebaut – ganz wie ein KALLAX-Regal.',
-     'Passiv gekühlt, unter 20 dB. Du hörst dein Game, nicht deinen Server.'),
+     'Temperaturgeregelte Aktivkühlung – der Lüfter dreht nur unter Last hoch und bleibt im Alltag angenehm leise.'),
 
     # --- Assembly ---
     ('Vom Karton zum<br>eigenen Server.', 'Vom Karton zum<br>Power-Server.'),
+    # Dunkle Aufbau-Sequenz (eigene Frames für die Pro-Edition)
+    ('data-frames="assets/server/frames"', 'data-frames="assets/server/frames-pro"'),
+    # Statusring ist weiß (nicht grün) — konsistent mit dem Pro-Produktbild
+    ('Power-Knopf drücken, die LED leuchtet grün. Dein Server läuft.',
+     'Power-Knopf drücken, der Statusring leuchtet weiß. Dein Server läuft.'),
 
     # --- Feature-Reihen ---
     ('<p class="feature__eyebrow">Privatsphäre</p>', '<p class="feature__eyebrow">Performance</p>'),
     ('<h2 class="feature__title">Deine Daten. Dein Gerät. Dein Zuhause.</h2>',
      '<h2 class="feature__title">Gebaut für echte Last.</h2>'),
     ('Kein Konzern liest mit. SERVÅR speichert alles lokal und verschlüsselt – du allein hältst den Schlüssel in der Hand.',
-     'Octa-Core, 16 GB RAM und NVMe-SSD. Genug Reserven für 4K-Schnitt, Game-Streaming und virtuelle Maschinen – gleichzeitig.'),
+     'Octa-Core, 16 GB RAM und NVMe-SSD. Genug Reserven für 4K-Schnitt, Live-Streaming und virtuelle Maschinen – gleichzeitig.'),
     ('<p class="feature__eyebrow">Aufbau</p>', '<p class="feature__eyebrow">Design</p>'),
     ('<h2 class="feature__title">Aufbau wie ein KALLAX-Regal.</h2>',
      '<h2 class="feature__title">Dark Aluminium &amp; Eiche.</h2>'),
@@ -116,22 +125,41 @@ MORK = [
      'Mattschwarz eloxiertes Aluminium, Deckel aus geräucherter Eiche. Ein Stück, das neben Mac und Monitor bestehen will.'),
     ('<p class="feature__eyebrow">Kosten</p>', '<p class="feature__eyebrow">Kontrolle</p>'),
     ('<h2 class="feature__title">Einmalpreis. Kein Abo. Nie wieder.</h2>',
-     '<h2 class="feature__title">Dein Dashboard. Dark Mode.</h2>'),
+     '<h2 class="feature__title">Dein Dashboard. Deine Regeln.</h2>'),
     ('Du zahlst einmal – und dann nie wieder. Keine versteckten Gebühren, keine Preiserhöhung im dritten Jahr.',
      'Upload-Raten, Speicherbalken, Netzwerkauslastung – live im dunklen Dashboard. Volle Kontrolle, null Cloud.'),
+    # Feature-Bilder: eigene Pro-Aufnahmen (dunkles Aluminium) + passende Alt-Texte
+    ('assets/img/feature-privatsphaere.webp', 'assets/img/feature-performance.webp'),
+    ('alt="SERVÅR Home-Server aufgeräumt im Zuhause"',
+     'alt="SERVÅR Mörk – Studio-Produktfoto des dunklen Aluminium-Gehäuses"'),
+    ('assets/img/feature-aufbau.webp', 'assets/img/feature-design.webp'),
+    ('alt="SERVÅR Flat-Pack – Module und Inbusschlüssel zum Aufbau"',
+     'alt="SERVÅR Mörk – Bauteile in dunklem Aluminium, ordentlich angeordnet"'),
+    ('assets/img/feature-kosten.webp', 'assets/img/feature-kontrolle.webp'),
+    ('alt="SERVÅR mit Erweiterungs-Modul"',
+     'alt="SERVÅR Mörk – Modul dockt an den Server an"'),
 
     # --- Specs ---
     ('<h2 class="specs__title">Das steckt im Karton.</h2>',
      '<h2 class="specs__title">Das steckt im Dark-Gehäuse.</h2>'),
     ('Kompakte Leistung, die leise im Regal verschwindet – und mit dir mitwächst.',
-     'Kompromisslose Hardware in eloxiertem Aluminium – flüsterleise und endlos erweiterbar.'),
+     'Kompromisslose Hardware in eloxiertem Aluminium – leise gekühlt und endlos erweiterbar.'),
+    # Aktivkühlung statt „lüfterlos" — das Pro-Modell hat einen (leisen) Lüfter
+    ('<span class="specs__stat-label">Flüsterleise · lüfterlos</span>',
+     '<span class="specs__stat-label">Leise · aktiv gekühlt</span>'),
     ('<span data-countup="2">0</span>&nbsp;TB', '<span data-countup="8">0</span>&nbsp;TB'),
+    # Höherer Verbrauch: Octa-Core, NVMe, 10 GbE + Aktivkühlung ziehen mehr
+    ('<span data-countup="7">0</span>&nbsp;W', '<span data-countup="18">0</span>&nbsp;W'),
+    ('<dt>Leistungsaufnahme</dt><dd>7–18 W</dd>', '<dt>Leistungsaufnahme</dt><dd>18–55 W</dd>'),
     ('<dd>Quad-Core ARM</dd>', '<dd>Octa-Core ARM</dd>'),
     ('<dd>4 GB LPDDR5</dd>', '<dd>16 GB LPDDR5</dd>'),
     ('<dd>2 TB SSD</dd>', '<dd>8 TB NVMe</dd>'),
     ('<dd>2,5 Gbit/s LAN</dd>', '<dd>10 Gbit/s LAN</dd>'),
     ('<dd>Wi-Fi 6E · BT 5.3</dd>', '<dd>Wi-Fi 7 · BT 5.4</dd>'),
     ('<dd>Kunststoff · Birkenholz</dd>', '<dd>Alu · Geräucherte Eiche</dd>'),
+    # Statusring als eigene Spec-Zeile (Pro-Feature: weiß, dimmbar)
+    ('<div class="specs__row"><dt>Montage</dt><dd>werkzeugarm</dd></div>',
+     '<div class="specs__row"><dt>Statusring</dt><dd>Weiß · dimmbar</dd></div>\n                        <div class="specs__row"><dt>Montage</dt><dd>werkzeugarm</dd></div>'),
 
     # --- CTA-Band + Footer ---
     ('Bereit für deinen<br>eigenen Server?', 'Bereit für deinen<br>Power-Server?'),
@@ -142,7 +170,7 @@ MORK = [
      'Mehr Power. Edles Dark Design. Dein Pro-Server – designed in Schweden.'),
 
     # Hero-Badge zuletzt: Marquee/Trust-Treffer sind dann schon ersetzt → trifft nur das Hero-Badge
-    ('Werkzeug liegt bei', 'Stealth-LED inklusive'),
+    ('Werkzeug liegt bei', 'Offline-Backup inklusive'),
 ]
 
 
@@ -175,6 +203,10 @@ NOMAD = [
     ('class="btn btn--yellow btn--lg">Jetzt entdecken</a>',
      'class="btn btn--yellow btn--lg">Nomad entdecken</a>'),
     ('503.847.62', '503.847.64'),
+    # Hero-Medien: eigenes Nomad-Video + Poster (Poster trifft auch den LCP-Preload)
+    ('assets/hero/servar-hero-poster.webp', 'assets/hero/servar-hero-nomad-poster.webp'),
+    ('assets/hero/servar-hero.webm', 'assets/hero/servar-hero-nomad.webm'),
+    ('assets/hero/servar-hero.mp4', 'assets/hero/servar-hero-nomad.mp4'),
 
     # --- Marquee ---
     (mq('Kein Abo'),         mq('IP54 geschützt')),
@@ -208,6 +240,19 @@ NOMAD = [
 
     # --- Assembly ---
     ('Vom Karton zum<br>eigenen Server.', 'Vom Karton zum<br>Off-Grid-Server.'),
+    # Eigene Aufbau-Sequenz für die Nomad-Edition
+    ('data-frames="assets/server/frames"', 'data-frames="assets/server/frames-nomad"'),
+    # Aufbau-Schritte an die robuste Solar-/Off-Grid-Hardware angepasst
+    ('Alle Teile liegen flach verpackt bereit – inklusive Inbusschlüssel.',
+     'Alle Teile liegen flach verpackt bereit – Gehäuse, Eckschützer, Solarpanel und Tragegriff.'),
+    ('Speicher-Module der Reihe nach aufeinanderstecken. Klick – sitzt.',
+     'Speicher-Module aufeinanderstecken und die robusten Eckschützer aufclipsen. Klick – sitzt.'),
+    ('<span class="assembly__step-title">Deckel &amp; Kabel</span>',
+     '<span class="assembly__step-title">Solarpanel &amp; Akku</span>'),
+    ('Holzdeckel auflegen, Strom und Netzwerk anschließen.',
+     'Solarpanel oben aufsetzen, Akku einschieben und Tragegriff montieren.'),
+    ('Power-Knopf drücken, die LED leuchtet grün. Dein Server läuft.',
+     'Power-Knopf drücken – das Display zeigt Akku, Solar und Backup. Off-Grid läuft.'),
 
     # --- Feature-Reihen ---
     ('<p class="feature__eyebrow">Privatsphäre</p>', '<p class="feature__eyebrow">Unabhängigkeit</p>'),
@@ -225,6 +270,16 @@ NOMAD = [
      '<h2 class="feature__title">Solar rein, Daten sicher.</h2>'),
     ('Du zahlst einmal – und dann nie wieder. Keine versteckten Gebühren, keine Preiserhöhung im dritten Jahr.',
      'Integrierter Akku und optionales Mini-Solarpanel halten dich am Laufen – auch wenn tagelang kein Strom kommt.'),
+    # Feature-Bilder: eigene Säker-Aufnahmen (Outdoor/robust/Solar) + passende Alt-Texte
+    ('assets/img/feature-privatsphaere.webp', 'assets/img/feature-unabhaengigkeit.webp'),
+    ('alt="SERVÅR Home-Server aufgeräumt im Zuhause"',
+     'alt="SERVÅR Säker – robuster Off-Grid-Server draußen im Einsatz"'),
+    ('assets/img/feature-aufbau.webp', 'assets/img/feature-robustheit.webp'),
+    ('alt="SERVÅR Flat-Pack – Module und Inbusschlüssel zum Aufbau"',
+     'alt="SERVÅR Säker – robustes Gerät mit IKEA-Zubehör"'),
+    ('assets/img/feature-kosten.webp', 'assets/img/feature-energie.webp'),
+    ('alt="SERVÅR mit Erweiterungs-Modul"',
+     'alt="SERVÅR Säker – Energie-Dashboard mit Solarladung"'),
 
     # --- Specs ---
     ('<h2 class="specs__title">Das steckt im Karton.</h2>',

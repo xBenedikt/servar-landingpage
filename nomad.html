@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERVÅR Säker – Robuster Off-Grid Home-Server (IP54)</title>
     <meta name="description" content="SERVÅR Säker – die Outdoor-Edition: spritzwassergeschützt (IP54), mit Akku, Solar-Anschluss und Tragegriff. Für Tiny-House, Van-Life und Krisenvorsorge.">
+    <!-- LCP: Hero-Poster sofort auffindbar & hoch priorisiert laden
+         (an <video poster> lässt sich fetchpriority nicht direkt setzen) -->
+    <link rel="preload" as="image" href="assets/hero/servar-hero-nomad-poster.webp" type="image/webp" fetchpriority="high">
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/themes.css">
+
+    <!-- Favicon: „S" der SERVÅR-Wortmarke in IKEA-Blau auf Gelb (alle Seiten gleich) -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body class="theme-nomad">
 <span id="top" aria-hidden="true"></span>
@@ -62,9 +71,9 @@
          ==================================================== -->
     <section class="hero" id="hero">
         <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="auto"
-               poster="assets/hero/servar-hero-poster.webp" aria-hidden="true">
-            <source src="assets/hero/servar-hero.webm" type="video/webm">
-            <source src="assets/hero/servar-hero.mp4" type="video/mp4">
+               poster="assets/hero/servar-hero-nomad-poster.webp" aria-hidden="true">
+            <source src="assets/hero/servar-hero-nomad.webm" type="video/webm">
+            <source src="assets/hero/servar-hero-nomad.mp4" type="video/mp4">
         </video>
         <div class="hero__scrim" aria-hidden="true"></div>
 
@@ -195,6 +204,7 @@
 
                     <div class="assembly__scene">
                         <canvas class="assembly__canvas" id="assembly-canvas" width="900" height="1600"
+                                data-frames="assets/server/frames-nomad"
                                 role="img" aria-label="SERVÅR baut sich Schritt für Schritt zusammen"></canvas>
                     </div>
                 </div>
@@ -208,28 +218,28 @@
                             <span class="assembly__step-num">01</span>
                             <div>
                                 <span class="assembly__step-title">Auspacken &amp; sortieren</span>
-                                <span class="assembly__step-text">Alle Teile liegen flach verpackt bereit – inklusive Inbusschlüssel.</span>
+                                <span class="assembly__step-text">Alle Teile liegen flach verpackt bereit – Gehäuse, Eckschützer, Solarpanel und Tragegriff.</span>
                             </div>
                         </li>
                         <li class="assembly__step" data-step="1">
                             <span class="assembly__step-num">02</span>
                             <div>
                                 <span class="assembly__step-title">Module stapeln</span>
-                                <span class="assembly__step-text">Speicher-Module der Reihe nach aufeinanderstecken. Klick – sitzt.</span>
+                                <span class="assembly__step-text">Speicher-Module aufeinanderstecken und die robusten Eckschützer aufclipsen. Klick – sitzt.</span>
                             </div>
                         </li>
                         <li class="assembly__step" data-step="2">
                             <span class="assembly__step-num">03</span>
                             <div>
-                                <span class="assembly__step-title">Deckel &amp; Kabel</span>
-                                <span class="assembly__step-text">Holzdeckel auflegen, Strom und Netzwerk anschließen.</span>
+                                <span class="assembly__step-title">Solarpanel &amp; Akku</span>
+                                <span class="assembly__step-text">Solarpanel oben aufsetzen, Akku einschieben und Tragegriff montieren.</span>
                             </div>
                         </li>
                         <li class="assembly__step" data-step="3">
                             <span class="assembly__step-num">04</span>
                             <div>
                                 <span class="assembly__step-title">Einschalten – fertig</span>
-                                <span class="assembly__step-text">Power-Knopf drücken, die LED leuchtet grün. Dein Server läuft.</span>
+                                <span class="assembly__step-text">Power-Knopf drücken – das Display zeigt Akku, Solar und Backup. Off-Grid läuft.</span>
                             </div>
                         </li>
                     </ol>
@@ -248,7 +258,7 @@
 
             <div class="feature__row">
                 <div class="feature__media reveal reveal--left">
-                    <img class="feature__media-img" src="assets/img/feature-privatsphaere.webp" alt="SERVÅR Home-Server aufgeräumt im Zuhause" loading="lazy" decoding="async">
+                    <img class="feature__media-img" src="assets/img/feature-unabhaengigkeit.webp" alt="SERVÅR Säker – robuster Off-Grid-Server draußen im Einsatz" loading="lazy" decoding="async">
                 </div>
                 <div class="reveal reveal--right">
                     <p class="feature__eyebrow">Unabhängigkeit</p>
@@ -264,7 +274,7 @@
 
             <div class="feature__row feature__row--reverse">
                 <div class="feature__media reveal reveal--right">
-                    <img class="feature__media-img" src="assets/img/feature-aufbau.webp" alt="SERVÅR Flat-Pack – Module und Inbusschlüssel zum Aufbau" loading="lazy" decoding="async">
+                    <img class="feature__media-img" src="assets/img/feature-robustheit.webp" alt="SERVÅR Säker – robustes Gerät mit IKEA-Zubehör" loading="lazy" decoding="async">
                 </div>
                 <div class="reveal reveal--left">
                     <p class="feature__eyebrow">Robustheit</p>
@@ -280,7 +290,7 @@
 
             <div class="feature__row">
                 <div class="feature__media reveal reveal--left">
-                    <img class="feature__media-img" src="assets/img/feature-kosten.webp" alt="SERVÅR mit Erweiterungs-Modul" loading="lazy" decoding="async">
+                    <img class="feature__media-img" src="assets/img/feature-energie.webp" alt="SERVÅR Säker – Energie-Dashboard mit Solarladung" loading="lazy" decoding="async">
                 </div>
                 <div class="reveal reveal--right">
                     <p class="feature__eyebrow">Energie</p>
@@ -538,12 +548,12 @@
                                 </span>
                             </button>
 
-                            <button class="insta-card" data-handle="privacy_paula" data-count="2" data-card-index="1" aria-label="Beitrag von privacy_paula öffnen">
-                                <img class="insta-card__img" src="assets/img/community-2.webp" alt="SERVÅR-Setup von @privacy_paula" loading="lazy" decoding="async">
+                            <button class="insta-card" data-handle="design_paula" data-count="2" data-products="pro,fixa" data-card-index="1" aria-label="Beitrag von design_paula öffnen">
+                                <img class="insta-card__img" src="assets/img/community-2.webp" alt="SERVÅR-Setup von @design_paula" loading="lazy" decoding="async">
 
                                 <span class="insta-card__ig-badge" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                                    <span class="insta-card__ig-name">privacy_paula</span>
+                                    <span class="insta-card__ig-name">design_paula</span>
                                 </span>
                                 <span class="insta-card__count" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
@@ -577,12 +587,12 @@
                                 </span>
                             </button>
 
-                            <button class="insta-card" data-handle="cleandesk_co" data-count="1" data-card-index="4" aria-label="Beitrag von cleandesk_co öffnen">
-                                <img class="insta-card__img" src="assets/img/community-5.webp" alt="SERVÅR-Setup von @cleandesk_co" loading="lazy" decoding="async">
+                            <button class="insta-card" data-handle="travel_tim" data-count="2" data-products="nomad,fixa" data-card-index="4" aria-label="Beitrag von travel_tim öffnen">
+                                <img class="insta-card__img" src="assets/img/community-5.webp" alt="SERVÅR-Setup von @travel_tim" loading="lazy" decoding="async">
 
                                 <span class="insta-card__ig-badge" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                                    <span class="insta-card__ig-name">cleandesk_co</span>
+                                    <span class="insta-card__ig-name">travel_tim</span>
                                 </span>
                                 <span class="insta-card__count" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
@@ -755,63 +765,8 @@
                 </div>
             </div>
 
-            <div class="insta-modal__products-col">
-
-                <div class="insta-product">
-                    <div class="insta-product__thumb"><img src="assets/img/produkt-basis.webp" alt="SERVÅR Basis-Einheit"></div>
-                    <div class="insta-product__info">
-                        <span class="insta-product__name">SERVÅR</span>
-                        <span class="insta-product__desc">Basis-Einheit, 2 TB</span>
-                        <span class="insta-product__price">499,<sup>–</sup>&nbsp;€</span>
-                    </div>
-                    <div class="insta-product__actions">
-                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
-                        </button>
-                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="insta-product">
-                    <div class="insta-product__thumb"><img src="assets/img/produkt-modul.webp" alt="SERVÅR Erweiterungs-Modul"></div>
-                    <div class="insta-product__info">
-                        <span class="insta-product__badge">Neuer niedriger Preis</span>
-                        <span class="insta-product__name">SERVÅR</span>
-                        <span class="insta-product__desc">Erweiterungs-Modul, +12 TB</span>
-                        <span class="price-tag price-tag--offer">
-                            <span class="price-tag__price" data-main="299" data-cents="–" data-currency="€"></span>
-                        </span>
-                        <span class="insta-product__price-old">Vorher: 349,– €</span>
-                    </div>
-                    <div class="insta-product__actions">
-                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
-                        </button>
-                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="insta-product">
-                    <div class="insta-product__thumb"><img src="assets/img/produkt-fixa.webp" alt="FIXA Inbusschlüssel"></div>
-                    <div class="insta-product__info">
-                        <span class="insta-product__name">FIXA</span>
-                        <span class="insta-product__desc">Ersatz-Inbusschlüssel, 4 mm</span>
-                        <span class="insta-product__price">2,<sup>–</sup>&nbsp;€</span>
-                    </div>
-                    <div class="insta-product__actions">
-                        <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
-                        </button>
-                        <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
-                        </button>
-                    </div>
-                </div>
-
+            <div class="insta-modal__products-col" id="insta-modal-products">
+                <!-- pro Beitrag dynamisch befüllt (siehe initInstaSlider in js/components.js) -->
             </div>
         </div>
     </div>

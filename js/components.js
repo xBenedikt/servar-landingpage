@@ -120,14 +120,16 @@ function initSizeSelectors() {
    WISHLIST TOGGLE
    ---------------------------------------------------------- */
 
-function initWishlistButtons() {
-    document.querySelectorAll('.btn-icon--wishlist').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const active = btn.classList.toggle('is-active');
-            btn.setAttribute('aria-pressed', String(active));
-            btn.setAttribute('aria-label', active ? 'Aus Favoriten entfernen' : 'Zu Favoriten hinzufügen');
-        });
+function bindWishlist(btn) {
+    btn.addEventListener('click', () => {
+        const active = btn.classList.toggle('is-active');
+        btn.setAttribute('aria-pressed', String(active));
+        btn.setAttribute('aria-label', active ? 'Aus Favoriten entfernen' : 'Zu Favoriten hinzufügen');
     });
+}
+
+function initWishlistButtons() {
+    document.querySelectorAll('.btn-icon--wishlist').forEach(bindWishlist);
 }
 
 
@@ -298,12 +300,48 @@ function initInstaSlider() {
     const closeBtn  = document.getElementById('insta-modal-close');
     const imgEl     = document.getElementById('insta-modal-img');
     const usernameEl = document.getElementById('insta-modal-username');
+    const productsCol = document.getElementById('insta-modal-products');
 
     if (!modal) return;
+
+    // Produkt-Katalog für die getaggten Posts. Jede Insta-Karte wählt ihre
+    // Produkte per data-products="key,key" (Default: Original-Set).
+    const PRODUCTS = {
+        basis: { img: 'assets/img/produkt-basis.webp', alt: 'SERVÅR Basis-Einheit',      name: 'SERVÅR',       desc: 'Basis-Einheit, 2 TB',         price: '499'   },
+        modul: { img: 'assets/img/produkt-modul.webp', alt: 'SERVÅR Erweiterungs-Modul', name: 'SERVÅR',       desc: 'Erweiterungs-Modul, +12 TB',  price: '299'   },
+        fixa:  { img: 'assets/img/produkt-fixa.webp',  alt: 'FIXA Inbusschlüssel',        name: 'FIXA',         desc: 'Ersatz-Inbusschlüssel, 4 mm',  price: '2'     },
+        pro:   { img: 'assets/img/produkt-pro.webp',   alt: 'SERVÅR Mörk Pro-Edition',    name: 'SERVÅR Mörk',  desc: 'Pro-Edition, 8 TB NVMe',      price: '1.299' },
+        nomad: { img: 'assets/img/produkt-nomad.webp', alt: 'SERVÅR Säker Off-Grid',      name: 'SERVÅR Säker', desc: 'Off-Grid-Edition, 4 TB',      price: '699'   },
+    };
+    const CART_SVG  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>';
+    const HEART_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>';
+
+    function renderProducts(keys) {
+        if (!productsCol) return;
+        const list = (keys || 'basis,modul,fixa').split(',')
+            .map(k => k.trim()).filter(k => PRODUCTS[k]);
+        productsCol.innerHTML = list.map(k => {
+            const p = PRODUCTS[k];
+            return `<div class="insta-product">
+                <div class="insta-product__thumb"><img src="${p.img}" alt="${p.alt}"></div>
+                <div class="insta-product__info">
+                    <span class="insta-product__name">${p.name}</span>
+                    <span class="insta-product__desc">${p.desc}</span>
+                    <span class="insta-product__price">${p.price},<sup>–</sup>&nbsp;€</span>
+                </div>
+                <div class="insta-product__actions">
+                    <button class="btn-icon btn-icon--primary" aria-label="In den Warenkorb">${CART_SVG}</button>
+                    <button class="btn-icon btn-icon--wishlist" aria-label="Zu Favoriten" aria-pressed="false">${HEART_SVG}</button>
+                </div>
+            </div>`;
+        }).join('');
+        productsCol.querySelectorAll('.btn-icon--wishlist').forEach(bindWishlist);
+    }
 
     function openModal(card) {
         const handle = card.dataset.handle ?? '–';
         const imgSrc = card.querySelector('.insta-card__img')?.getAttribute('src') ?? '';
+        renderProducts(card.dataset.products);
 
         if (imgEl) {
             imgEl.style.backgroundImage    = imgSrc ? `url("${imgSrc}")` : '';
@@ -326,6 +364,16 @@ function initInstaSlider() {
 
     document.querySelectorAll('.insta-card').forEach(card => {
         card.addEventListener('click', () => openModal(card));
+        // Count-Badge = tatsächliche Produktanzahl im Post (aus data-products)
+        const countEl = card.querySelector('.insta-card__count');
+        if (countEl) {
+            const n = (card.dataset.products || 'basis,modul,fixa')
+                .split(',').map(k => k.trim()).filter(k => PRODUCTS[k]).length;
+            const svg = countEl.querySelector('svg');
+            countEl.innerHTML = '';
+            if (svg) countEl.appendChild(svg);
+            countEl.appendChild(document.createTextNode(' ' + n));
+        }
     });
 
     closeBtn?.addEventListener('click', closeModal);
