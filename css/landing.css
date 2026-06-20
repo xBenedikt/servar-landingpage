@@ -1729,11 +1729,13 @@ section[id] {
         text-align: center;
     }
     .assembly__intro .assembly__title { margin: 2px 0 0; }
-    /* Lesbarkeit über dem Canvas: heller Halo (Mörk dunkel, siehe themes.css) */
+    /* Lesbarkeit über dem Canvas: weicher, diffuser heller Halo statt harter
+       Kante (das scharfe Weiß fiele sonst als Stilbruch auf). Mörk nutzt einen
+       dunklen Schatten, siehe themes.css. */
     .assembly__intro .assembly__eyebrow,
     .assembly__intro .assembly__title {
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75),
-                     0 1px 12px rgba(255, 255, 255, 0.55);
+        text-shadow: 0 1px 10px rgba(255, 255, 255, 0.55),
+                     0 2px 22px rgba(255, 255, 255, 0.42);
     }
 
     .feature__row,
