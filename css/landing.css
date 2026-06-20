@@ -1700,6 +1700,24 @@ section[id] {
     }
     .assembly__steplist { min-height: 64px; }
 
+    /* Titelblock über den oberen (leeren) Canvas-Bereich legen → der Canvas
+       sitzt zuoberst, die Schiene darunter, und unten bleibt mehr Platz für
+       den aktiven Schritt. Intro liegt absolut über dem Canvas. */
+    .assembly__grid { position: relative; align-content: start; }
+    .assembly__scene { order: -1; }
+    .assembly__intro {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(96vw, 460px);
+        padding-top: var(--sp-3);
+        z-index: 2;
+        pointer-events: none;
+        text-align: center;
+    }
+    .assembly__intro .assembly__title { margin: 2px 0 0; }
+
     .feature__row,
     .feature__row--reverse {
         grid-template-columns: 1fr;
