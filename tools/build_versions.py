@@ -46,10 +46,10 @@ def mq(term):
 MORK = [
     # --- Theme + Umschalter ---
     ('<body>', '<body class="theme-mork">'),
-    ('<a href="index.html" class="version-switch__link is-active" aria-current="page">Original</a>',
-     '<a href="index.html" class="version-switch__link">Original</a>'),
-    ('<a href="mork.html"  class="version-switch__link">Mörk · Pro</a>',
-     '<a href="mork.html"  class="version-switch__link is-active" aria-current="page">Mörk · Pro</a>'),
+    ('<a href="./" class="version-switch__link is-active" aria-current="page">Original</a>',
+     '<a href="./" class="version-switch__link">Original</a>'),
+    ('<a href="mork"  class="version-switch__link">Mörk · Pro</a>',
+     '<a href="mork"  class="version-switch__link is-active" aria-current="page">Mörk · Pro</a>'),
 
     # --- <head> ---
     ('<title>SERVÅR – Dein eigener Server. Ohne Cloud, ohne Abo.</title>',
@@ -180,10 +180,10 @@ MORK = [
 NOMAD = [
     # --- Theme + Umschalter ---
     ('<body>', '<body class="theme-nomad">'),
-    ('<a href="index.html" class="version-switch__link is-active" aria-current="page">Original</a>',
-     '<a href="index.html" class="version-switch__link">Original</a>'),
-    ('<a href="nomad.html" class="version-switch__link">Säker · Nomad</a>',
-     '<a href="nomad.html" class="version-switch__link is-active" aria-current="page">Säker · Nomad</a>'),
+    ('<a href="./" class="version-switch__link is-active" aria-current="page">Original</a>',
+     '<a href="./" class="version-switch__link">Original</a>'),
+    ('<a href="nomad" class="version-switch__link">Säker · Nomad</a>',
+     '<a href="nomad" class="version-switch__link is-active" aria-current="page">Säker · Nomad</a>'),
 
     # --- <head> ---
     ('<title>SERVÅR – Dein eigener Server. Ohne Cloud, ohne Abo.</title>',
